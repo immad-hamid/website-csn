@@ -1,0 +1,7 @@
+{
+  "universal": {
+    "project": "icsn-client",
+    "skipInstall": false,
+    "directory": "."
+  }
+}
