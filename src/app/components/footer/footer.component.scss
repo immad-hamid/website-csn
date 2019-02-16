@@ -1,0 +1,16 @@
+footer {
+    margin-top: -40px;
+    background-color: #f9f9f9;
+    .social-list {
+        .social-text {
+            display: inline-block;
+            margin-left: 10px;
+            transform: translateY(1px);
+        }
+    } 
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

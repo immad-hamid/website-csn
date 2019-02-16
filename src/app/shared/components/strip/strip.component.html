@@ -1,0 +1,19 @@
+<section class="sec-space">
+  <div 
+    id="strip" 
+    [ngStyle]="{'background' : 'url(assets/img/strip.png)'}">
+    <div class="container">
+      <div class="row v-align">
+        <div class="col-md-3">
+          <h5 class="text-white">{{ detail.title }}</h5>
+        </div>
+        <div class="col-md-6 pr-0 pl-0">
+          <p class="text-white">{{ detail.text }}</p>
+        </div>
+        <div class="col-md-3">
+          <a class="btn-lg btn-block" mat-raised-button routerLink="home">{{ detail.btn }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

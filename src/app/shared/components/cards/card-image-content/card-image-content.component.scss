@@ -1,0 +1,18 @@
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.header-image {
+    background-image: url('./../../../../../assets/img/logo-black-text.png');
+    background-size: cover;
+}
+
+.card-footer {
+    background-color: transparent;
+}
+
+.mar-zero {
+    margin-left: -15px !important;
+}
