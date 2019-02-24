@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SponsorshipComponent } from './sponsorship.component';
+import { SubHeaderModule } from 'src/app/shared/components/sub-header/sub-header.module';
 
 const routes: Routes = [
   { path: '', component: SponsorshipComponent }
@@ -13,6 +14,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    SubHeaderModule,
     RouterModule.forChild(routes)
   ]
 })

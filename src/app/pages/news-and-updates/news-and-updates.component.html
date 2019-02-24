@@ -1,3 +1,26 @@
-<p>
-  news-and-updates works!
-</p>
+<app-sub-header [heading]="heading"></app-sub-header>
+
+
+<section class="sec-space">
+  <div class="container">
+    <div class="row">
+
+      <ng-container *ngFor="let item of items">
+        <div class="col-sm-6">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Blog Heading</h5>
+              <p class="card-text">With supporting text. With supporting text below as a natural lead-in to additional content. With supporting text. With supporting text below as a natural lead-in to additional content.</p>
+              <div class="text-right">
+                <button mat-flat-button color="primary">Read More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec-space-b"></section>
