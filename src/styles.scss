@@ -3,6 +3,26 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.mat-drawer-container {
+    background: #ffffff;
+}
+
+@media (min-width: 961px) {
+    .sidenav {
+        display: none !important;
+    }
+}
+
+@media (max-width: 960px) {
+    .navbar {
+        display: none !important;
+    }
+}
+
+.display-none {
+    display: none;
+}
+
 // spacing
 .sec-space {
     padding-top: 40px;
@@ -15,6 +35,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .sec-space-b {
     padding-bottom: 40px;
+}
+
+.sec-space-nav-t {
+    padding-top: 6px;
+}
+
+.spacer {
+    flex: 1 1 auto;
 }
 
 // middle align
@@ -98,4 +126,11 @@ button:focus {
 
 figure {
     margin: 0;
+}
+
+@media (max-width: 767px) {
+    .para-bold {
+        font-size: 17px;
+        text-align: center;
+    }
 }

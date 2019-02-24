@@ -20,13 +20,14 @@
 }
 
 @media (max-width: 767px) {
-    // headings
-    h2 {
-        font-size: 42px;
-        padding-top: 20px !important;
-        line-height: 46px;
-        &::before {
-            height: 6px !important;
+    .sec-wrapper {
+        h2 {
+            font-size: 42px;
+            padding-top: 20px !important;
+            line-height: 46px;
+            &::before {
+                height: 6px !important;
+            }
         }
     }
 }

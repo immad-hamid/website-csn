@@ -1,3 +1,9 @@
-<p>
-  icsn-programmes works!
-</p>
+<app-sub-header [heading]="heading"></app-sub-header>
+
+
+<ng-container *ngFor="let program of programs">
+  <app-bg-with-content-banner 
+    [program]="program">
+  </app-bg-with-content-banner>
+</ng-container>
+

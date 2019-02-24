@@ -1,0 +1,59 @@
+<!-- <app-top-toolbar></app-top-toolbar> -->
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+      #drawer 
+      class="sidenav"
+      color="primary"
+      fixedInViewport="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <!-- <mat-toolbar>Menu</mat-toolbar> -->
+
+    <mat-nav-list>
+      <a class="nav-link" mat-list-item [routerLink]="['/about-us']">About Us</a>
+      <a class="nav-link" mat-list-item [routerLink]="['/icsn-programmes']">ICSN Programmes</a>
+      <a class="nav-link" mat-list-item [routerLink]="['/events']">Events</a>
+      <a class="nav-link" mat-list-item [routerLink]="['/news-and-updates']">News & Updates</a>
+      <a class="nav-link" mat-list-item [routerLink]="['/sponsorship']">Sponsorship</a>
+      <a class="nav-link" mat-list-item [routerLink]="['/contact-us']">Contact Us</a>
+    </mat-nav-list>
+    
+  </mat-sidenav>
+  <mat-sidenav-content>
+    
+    <app-top-toolbar></app-top-toolbar>
+
+    <!-- <mat-divider></mat-divider> -->
+
+    <mat-toolbar>
+      <span>
+        <figure [routerLink]="['/home']" style="cursor: pointer">
+          <img class="mw-100" style="width: 54px;" src="assets/img/logo-white-text.png" alt="ICSN">
+        </figure>
+      </span>
+
+      <span class="spacer"></span>
+
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <!-- <span class="spacer" *ngIf="!isHandset$ | async"></span> -->
+
+      <!-- <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a> -->
+      <app-header></app-header>
+    
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

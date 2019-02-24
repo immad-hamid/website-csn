@@ -23,7 +23,7 @@
             // transform: translateX(-50%);
             bottom: -10px;
             width: 100%;
-            max-width: 210px;
+            max-width: 245px;
             height: 4px;
             background-color: #2d521d;
         }
@@ -44,5 +44,21 @@
         &:hover {
             text-decoration: none;
         }
+    }
+}
+
+@media (max-width: 767px) {
+    p {
+        font-size: 17px !important;
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .pl-0 {
+        padding-left: 15px !important;
+    }
+
+    .pr-0 {
+        padding-right: 15px !important;
     }
 }

@@ -24,7 +24,7 @@ nav {
         font-weight: 500;
         letter-spacing: 0.02em;
         text-transform: uppercase;
-        padding: 0;
+        padding: 0 5px;
         margin: 0 5px;
         background-color: transparent;
         transition: all ease 0.35s;
@@ -36,13 +36,8 @@ nav {
     }
 }
 
-i {
-    transform: translateY(-4px);
-    // color: #2D521D;
-    color: #f29200;
-    transition: all ease 0.35s;
-    &:hover {
-        color: #2D521D;
-        transition: all ease 0.35s;
-    }
+
+
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
 }

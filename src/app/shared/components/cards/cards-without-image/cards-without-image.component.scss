@@ -1,0 +1,24 @@
+.card-cute {
+    .strip {
+        height: 1rem;
+    }
+    .strip-black {
+        background-color: #181818;
+    }
+    .strip-red {
+        background-color: #bd1522;
+    }
+    .strip-yellow {
+        background-color: #f29200;
+    }
+    .strip-green {
+        background-color: #2b7041;
+    }
+}
+
+.fancy-card {
+    border-radius: 0 0 4px 4px;
+    mat-card-title {
+        margin-left: -16px;
+    }
+}

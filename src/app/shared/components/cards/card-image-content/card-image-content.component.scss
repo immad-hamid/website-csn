@@ -16,3 +16,9 @@ a {
 .mar-zero {
     margin-left: -15px !important;
 }
+
+@media (max-width: 767px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}

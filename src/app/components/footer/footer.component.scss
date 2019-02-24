@@ -1,6 +1,6 @@
 footer {
     margin-top: -40px;
-    background-color: #f9f9f9;
+    background-color: #181818;
     .social-list {
         .social-text {
             display: inline-block;
@@ -12,5 +12,9 @@ footer {
         &:hover {
             text-decoration: none;
         }
+    }
+
+    .mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary {
+        color: #ffffff;
     }
 }
