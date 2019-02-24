@@ -3,13 +3,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { BannerComponent } from './banner/banner.component';
-import { CardsModule } from 'src/app/shared/components/cards/cards.module';
 import { RecentBlogPostsComponent } from './recent-blog-posts/recent-blog-posts.component';
 import { InfoContentAreaComponent } from './info-content-area/info-content-area.component';
-import { StripModule } from 'src/app/shared/components/strip/strip.module';
 import { RecentEventsComponent } from './recent-events/recent-events.component';
-import { SectionHeaderModule } from 'src/app/shared/components/section-header/section-header.module';
 import { WhatsNewComponent } from './whats-new/whats-new.component';
+
+import { CardsModule } from './../../shared/components/cards/cards.module';
+import { SectionHeaderModule } from './../../shared/components/section-header/section-header.module';
+import { StripModule } from './../../shared/components/strip/strip.module';
+// import { CardsModule } from 'src/app/shared/components/cards/cards.module';
+// import { SectionHeaderModule } from 'src/app/shared/components/section-header/section-header.module';
+// import { StripModule } from 'src/app/shared/components/strip/strip.module';
 
 
 const routes: Routes = [

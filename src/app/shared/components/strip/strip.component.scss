@@ -22,9 +22,10 @@
             // left: 50%;
             // transform: translateX(-50%);
             bottom: -10px;
-            width: 70%;
+            width: 100%;
+            max-width: 210px;
             height: 4px;
-            background-color: #ffffff;
+            background-color: #2d521d;
         }
     }
 
@@ -35,6 +36,7 @@
     }
 
     .mat-raised-button {
+        font-family: 'Oswald', sans-serif;
         white-space: normal;
         line-height: 22px;
         padding: 10px 0;

@@ -3,16 +3,17 @@
     .top-border-head {
         position: relative;
         h2 {
-            padding-top: 50px;
+            padding-top: 30px;
             &::before {
                 content: '';
                 position: absolute;
                 top: 0px;
                 left: 50%;
                 transform: translateX(-50%);
-                height: 16px;
+                height: 8px;
                 width: 92%;
-                background-color: #000000;
+                background-color: #cecece;
+                background-color: #2d521d;
             }
         }
         p {

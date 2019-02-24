@@ -26,35 +26,44 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 // headings
 h1 {
+    font-family: 'Oswald', sans-serif;
     font-size: 72px;
     font-weight: 900;
     letter-spacing: 0.04em;
-    color: #000000;
+    color: #3e3e3e;
 }
 h2 {
+    font-family: 'Oswald', sans-serif;
     font-size: 66px;
     font-weight: 700;
     letter-spacing: 0.04em;
-    color: #000000;
+    color: #3e3e3e;
 }
 h3 {
+    font-family: 'Oswald', sans-serif;
     font-size: 48px;
     font-weight: 700;
     letter-spacing: 0.04em;
-    color: #000000;
+    color: #3e3e3e;
 }
 h4 {
+    font-family: 'Oswald', sans-serif;
     font-size: 36px;
     font-weight: 700;
     letter-spacing: 0.04em;
-    color: #000000;
+    color: #3e3e3e;
 }
 
 h5 {
-    font-size: 26px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
     font-weight: 700;
     letter-spacing: 0.04em;
-    color: #000000;
+    color: #3e3e3e;
+}
+
+.mat-card-header .mat-card-title {
+    font-family: oswald;
 }
 
 // paragraph
@@ -62,7 +71,7 @@ h5 {
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 0.01em;
-    color: #000000;
+    color: #2e2e2e;
 }
 
 // overwritting material theme
