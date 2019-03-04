@@ -4,8 +4,8 @@ mat-form-field {
 
 .modal-header {
     background-color: #2d521d;
-    background: #bd1522;
-    background: #f29200;
+    background-color: #bd1522;
+    background-color: #f29200;
 }
 
 .modal-footer {
@@ -14,4 +14,11 @@ mat-form-field {
 
 .text-muted {
     font-size: 11px;
+}
+
+.submitBtn button {
+    width: 100%;
+    height: 58px;
+    font-size: 16px;
+    text-transform: uppercase;
 }
