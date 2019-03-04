@@ -1,0 +1,26 @@
+<app-sub-header [heading]="heading"></app-sub-header>
+
+<!-- Our team Section -->
+<section id="team" class="team content-section">
+  <div class="container">
+    <div class="row text-center">
+
+      <div class="container">
+        <div class="row">
+          
+          <ng-container *ngFor="let member of team">
+            <div class="col-md-3 col-sm-6">
+              <app-single-team-member
+                [member]="member">
+              </app-single-team-member>
+            </div>
+          </ng-container>
+          
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section><!-- /.our-team -->
+
+<section class="sec-space-b"></section>

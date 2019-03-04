@@ -5,20 +5,25 @@ nav {
 .navbar-nav {
     .nav-item {
         margin-right: 8px;
-        &:after {
+        &::before {
             content: '|';
             font-size: 18px;
-            margin-left: 8px;
+            margin-right: 8px;
             color: rgba(0,0,0,.5);
+        }
+        &:first-child {
+            margin-left: 0;
+            &::before {
+                content: '';
+                margin: 0;
+            }
         }
         &:last-child {
             margin-right: 0;
-            &:after {
-                content: '';
-            }
         }
     }
     .nav-link {
+        position: relative;
         color: #181818;
         font-size: 14px;
         font-weight: 500;
@@ -36,6 +41,11 @@ nav {
     }
 }
 
+mat-card.sub-dropdown.mat-card {
+    z-index: 9;
+    position: absolute;
+    top: calc(100% + 13px);
+}
 
 
 .navbar-expand-lg .navbar-nav {

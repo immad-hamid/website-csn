@@ -21,6 +21,10 @@ const routes: Routes = [
         loadChildren: './pages/about-us/about-us.module#AboutUsModule'
       },
       {
+        path: 'our-team',
+        loadChildren: './pages/team/team.module#TeamModule'
+      },
+      {
         path: 'icsn-programmes',
         loadChildren: './pages/icsn-programmes/icsn-programmes.module#IcsnProgrammesModule'
       },

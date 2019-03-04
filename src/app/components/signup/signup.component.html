@@ -1,0 +1,49 @@
+<div class="modal-header">
+  <h5 class="modal-title pull-left text-white">Sign Up</h5>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      
+      <p class="mb-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Email">
+          <mat-hint>Name is required!</mat-hint>
+        </mat-form-field>
+      </p>
+      
+      <p class="mb-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email">
+          <mat-hint>Email is required!</mat-hint>
+        </mat-form-field>
+      </p>
+      
+      <p class="mb-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="Password">
+          <mat-hint>Password is required!</mat-hint>
+        </mat-form-field>
+      </p>
+      
+      <p class="m-0">
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input type="password" matInput placeholder="Password">
+          <mat-hint>Password is required!</mat-hint>
+        </mat-form-field>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <span class="text-muted">Already a member? <a mat-button>Login</a></span>
+</div>
