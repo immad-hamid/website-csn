@@ -5,6 +5,7 @@ import { EventsComponent } from './events.component';
 import { SubHeaderModule } from 'src/app/shared/components/sub-header/sub-header.module';
 import { CardsModule } from 'src/app/shared/components/cards/cards.module';
 import { MaterialModule } from 'src/app/material/material.module';
+import { SingleEventComponent } from './single-event/single-event.component';
 
 const routes: Routes = [
   { path: '', component: EventsComponent }
@@ -12,7 +13,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    EventsComponent
+    EventsComponent,
+    SingleEventComponent
   ],
   imports: [
     CommonModule,

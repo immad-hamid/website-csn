@@ -18,3 +18,11 @@ footer {
         color: #ffffff;
     }
 }
+
+.form-control {
+    background: transparent;
+    &:focus {
+        // outline: none !important;
+        box-shadow: none;
+    }
+}
