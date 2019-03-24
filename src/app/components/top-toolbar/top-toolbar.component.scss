@@ -18,6 +18,7 @@ mat-toolbar {
         &:hover {
             cursor: pointer;
             color: #181818;
+            text-decoration: none;
             transition: all ease 0.35s;
         }
     }

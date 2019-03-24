@@ -27,3 +27,11 @@
         color: #ffffff;
     }
 }
+
+.bg-gradient {
+    background: #076633;
+    background: linear-gradient(to bottom, #076633 0%, #f292008c 65%);
+    background: -moz-linear-gradient(top, #076633 0%, #f292008c 65%);
+    background: -webkit-linear-gradient(top, #076633 0%,#f292008c 65%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#60a9ff', endColorstr='#4394f4',GradientType=0 );
+}

@@ -1,0 +1,59 @@
+<app-sub-header [heading]="heading"></app-sub-header>
+
+<section class="sec-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 mb-5">
+        
+
+        <p class="mb-2">
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput value="Ezim" disabled>
+            <mat-hint>Name can not be changed once account created.</mat-hint>
+          </mat-form-field>
+        </p>
+        
+        <p class="mb-2">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput value="ezim@gmail.com">
+            <mat-hint>Email is required!</mat-hint>
+          </mat-form-field>
+        </p>
+        
+        <p class="mb-2">
+          <mat-form-field appearance="outline">
+            <mat-label>Contact Number</mat-label>
+            <input matInput value="ezim@gmail.com">
+            <mat-hint>Contact Number is optional!</mat-hint>
+          </mat-form-field>
+        </p>
+        
+        <p class="mb-2">
+          <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput value="Garisson Bay, Street no. 5, TX, 759666">
+            <mat-hint>Address is optional!</mat-hint>
+          </mat-form-field>
+        </p>
+        
+        <p class="mb-2">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="Password">
+            <mat-hint>Password is required!</mat-hint>
+          </mat-form-field>
+        </p>
+  
+        <!-- <p class="mb-2">
+          <mat-checkbox>I am of Igbo Ancestory?</mat-checkbox>
+          <mat-checkbox>I am happy to also be contacted by Igbo businesses?</mat-checkbox>
+        </p> -->
+
+        <button class="mt-2" mat-flat-button color="accent">Save Changes</button>
+            
+      </div>
+    </div>
+  </div>
+</section>

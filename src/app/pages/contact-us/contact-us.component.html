@@ -3,42 +3,77 @@
 <section class="sec-space">
   <div class="container">
     <div class="row">
-      <div class="col-md-10 offset-md-1">
+      <div class="col-md-5">
+        <h4 class="mb-4">In-Person</h4>
+        <p>
+          We hold meetings at-least once every month (in London) and it’s a great opportunity to get to know what we’re about and our future plans.
+        </p>
+        <p>
+          Keep an eye on our Events page for details of when these meetings (and other events we’re involved with) occur.
+        </p>
+        
+        <h4 class="mb-4 pt-4">Via Email</h4>
+        <p>
+          You can contact us directly by filling in this form and a member of the Executive team will be in touch.
+        </p>
+      </div>
+
+      <div class="col-md-6 offset-md-1">
 
         <form [formGroup]="contactForm">
           
-          <div class="form-group">
-            <mat-form-field style="width: 100%">
-              <input formControlName="name" matInput placeholder="Name">
-            </mat-form-field>
-          </div>
-          
-          <div class="form-group">
-            <mat-form-field style="width: 100%">
-              <input formControlName="email" matInput placeholder="Email">
-            </mat-form-field>
-          </div>
-          
-          <div class="form-group">
-            <mat-form-field style="width: 100%">
-              <input formControlName="company" matInput placeholder="Company">
-            </mat-form-field>
-          </div>
-          
-          <div class="form-group">
-            <mat-form-field style="width: 100%">
-              <textarea formControlName="comment" matInput placeholder="Leave a comment"></textarea>
-            </mat-form-field>
-          </div>
-          
-          <div class="form-group">
-            <mat-checkbox formControlName="agree">Would you like to receive emails from us?</mat-checkbox>
-          </div>
+          <p class="mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput>
+                <mat-hint>Name is required!</mat-hint>
+              </mat-form-field>
+            </p>
+            
+            <p class="mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput>
+                <mat-hint>Email is required!</mat-hint>
+              </mat-form-field>
+            </p>
+            
+            <p class="mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Subject or Purpose</mat-label>
+                <input matInput>
+                <mat-hint>Email is required!</mat-hint>
+              </mat-form-field>
+            </p>
+            
+            <p class="mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Company</mat-label>
+                <input matInput>
+                <mat-hint>Company is optional</mat-hint>
+              </mat-form-field>
+            </p>
+            
+            <p class="mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Contact Number</mat-label>
+                <input matInput>
+                <mat-hint>Contact Number is optional</mat-hint>
+              </mat-form-field>
+            </p>
+            
+            <p class="mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Comment</mat-label>
+                <textarea matInput></textarea>
+                <mat-hint>Comment is required!</mat-hint>
+              </mat-form-field>
+            </p>
 
-          <div class="text-right">
-            <button mat-raised-button color="accent">Submit</button>
-          </div>
+            <button style="height:53px" class="btn-block" mat-flat-button color="accent">Send</button>
+
         </form>
+
 
       </div>
     </div>

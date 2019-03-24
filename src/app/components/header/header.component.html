@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" (mouseenter)="hideDropDown()">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div id="navbarNav">
     <ul class="navbar-nav ml-auto">
 
@@ -22,19 +22,22 @@
       
       </li>
 
-      <li class="nav-item" (mouseenter)="hideDropDown()">
-        <a class="nav-link" mat-flat-button [routerLink]="['/icsn-programmes']">ICSN Programmes</a>
+      <li class="nav-item">
+        <a class="nav-link" mat-flat-button [routerLink]="['/icsn-programmes']">Programmes</a>
       </li>
-      <li class="nav-item" (mouseenter)="hideDropDown()">
+      <li class="nav-item">
         <a class="nav-link" mat-flat-button [routerLink]="['/events']">Events</a>
       </li>
-      <li class="nav-item" (mouseenter)="hideDropDown()">
-        <a class="nav-link" mat-flat-button [routerLink]="['/news-and-updates']">News & Updates</a>
+      <li class="nav-item">
+        <a class="nav-link" mat-flat-button [routerLink]="['/news-and-updates']">Kwenu News & Articles</a>
       </li>
-      <li class="nav-item" (mouseenter)="hideDropDown()">
+      <li class="nav-item">
+        <a class="nav-link" mat-flat-button [routerLink]="['/get-involved']">Get Involved</a>
+      </li>
+      <!-- <li class="nav-item">
         <a class="nav-link" mat-flat-button [routerLink]="['/sponsorship']">Sponsorship</a>
-      </li>
-      <li class="nav-item" (mouseenter)="hideDropDown()">
+      </li> -->
+      <li class="nav-item">
         <a class="nav-link" mat-flat-button [routerLink]="['/contact-us']">Contact Us</a>
       </li>
     </ul>

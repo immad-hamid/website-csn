@@ -1,3 +1,54 @@
-<p>
-  my-profile works!
-</p>
+<app-sub-header [heading]="heading"></app-sub-header>
+
+<section class="sec-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 mb-5">
+        <mat-card style="background: #fbfcfb">
+
+          <mat-list>
+            <div>
+              <img 
+                src="assets/ezim.PNG" 
+                class="rounded mx-auto d-block mb-3" 
+                style="max-width: 150px; width: 100%; max-height: 150px" 
+                alt="placeholder">
+            </div>
+            <mat-divider></mat-divider>
+
+            <h3 mat-subheader>Name</h3>
+            <mat-list-item>
+              <h4 mat-line>Ezim</h4>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            
+            <h3 mat-subheader>Email</h3>
+            <mat-list-item>
+              <h4 mat-line>ezim@gmail.com</h4>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            
+            <h3 mat-subheader>Phone Number</h3>
+            <mat-list-item>
+              <h4 mat-line>+10034582456</h4>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            
+            <h3 mat-subheader>Address</h3>
+            <mat-list-item>
+              <h4 mat-line>Garisson Bay, Street no. 5, TX, 759666</h4>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+
+            <h3 class="pt-2"></h3>
+            <mat-list-item>
+              <a mat-flat-button color="accent" class="mx-auto d-block" style="max-width: 200px; width: 100%; height: 53px; line-height: 53px" [routerLink]="['/edit-profile']">Edit Profile</a>
+            </mat-list-item>
+          </mat-list>
+
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
+

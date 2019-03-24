@@ -53,4 +53,8 @@ export class TopToolbarComponent implements OnInit {
     this.bsModalRef.content.closeBtnName = 'Close';
   }
 
+  redirectSocial(url) {
+    window.open(url, '_blank');
+  }
+
 }

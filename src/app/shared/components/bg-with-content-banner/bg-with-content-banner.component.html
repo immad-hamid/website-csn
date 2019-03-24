@@ -1,20 +1,28 @@
-<section class="sec-space">
 
-  <div class="container">
-    <div class="row">
+<span *ngIf="program.img; then withImgTemp; else withoutImgTemp"></span>
 
-      <div class="jumbotron text-center" [ngStyle]="{background: 'url(' + program.img + ')'}">
-        <div class="content-area">
-          <h2 class="text-white">{{ program.heading }}</h2>
-          <p class="lead">{{ program.content }}</p>
-          <hr class="my-4">
-          <p class="lead text-center">
-            <button mat-raised-button color="accent" class="text-uppercase">Learn More</button>
-          </p>
-        </div>
+<ng-template #withImgTemp>
+  <div class="jumbotron text-center" [ngStyle]="{background: 'url(' + program.img + ')'}">
+    <div class="content-area">
+        <h2 class="text-white mb-4">{{ program?.heading }}</h2>
+        <p class="lead">{{ program?.content }}</p>
+        <hr class="my-4">
+        <p class="lead text-center">
+          <a mat-button color="accent" class="text-uppercase">Learn More</a>
+        </p>
       </div>
-
     </div>
-  </div>
+</ng-template>
 
-</section>
+<ng-template #withoutImgTemp>
+  <div class="jumbotron text-center bg-gradient">
+    <div class="content-area">
+        <h2 class="text-white">{{ program?.heading }}</h2>
+        <hr class="my-4">
+        <p class="lead text-center">
+          <a mat-flat-button color="accent" [routerLink]="[ program.anchor ]" class="text-uppercase">Learn More</a>
+        </p>
+      </div>
+    </div>
+</ng-template>
+

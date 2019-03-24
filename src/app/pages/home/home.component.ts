@@ -27,9 +27,9 @@ export class HomeComponent implements OnInit {
       }, 0);
     }
 
-    setTimeout(() => {
-      this.openSnackBar();
-    }, 0);
+    // setTimeout(() => {
+    //   this.openSnackBar();
+    // }, 0);
   }
 
   openSnackBar() {

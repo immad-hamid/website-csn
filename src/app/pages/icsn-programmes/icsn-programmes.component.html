@@ -1,9 +1,10 @@
 <app-sub-header [heading]="heading"></app-sub-header>
 
-
-<ng-container *ngFor="let program of programs">
+<div class="col-md-8 offset-md-2 mb-4" *ngFor="let program of programs">
   <app-bg-with-content-banner 
     [program]="program">
   </app-bg-with-content-banner>
-</ng-container>
+</div>
+
+<div class="mb-1 pb-5"></div>
 

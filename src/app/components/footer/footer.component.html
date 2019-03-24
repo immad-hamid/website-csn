@@ -1,12 +1,5 @@
 <footer>
     <div class="container pt-5">
-      <!-- <div class="row">
-        <div class="col-sm-1 mt-3">
-          <figure>
-            <img class="mw-100" src="assets/img/logo-white-text.png" alt="">
-          </figure>
-        </div>
-      </div> -->
 
       <div class="row">
 
@@ -26,15 +19,15 @@
             <div class="col-md-4 col-sm-4 col-6 mb-3 p-0 float-left">
               <ul class="list-group">
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" routerLink="home">About</a>
+                  <a mat-button color="primary" [routerLink]="['/about-us']">About</a>
                 </li>
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" routerLink="home">ICSN Programmes</a>
+                  <a mat-button color="primary" [routerLink]="['/icsn-programmes']">Programmes</a>
                 </li>
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" routerLink="home">Events</a></li>
+                  <a mat-button color="primary" [routerLink]="['/events']">Events</a></li>
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" routerLink="home">News & Updates</a>
+                  <a mat-button color="primary" [routerLink]="['/news-and-updates']">Kwenu News & Articles</a>
                 </li>
               </ul>
             </div>
@@ -42,16 +35,16 @@
             <div class="col-md-4 col-sm-4 col-6 mb-3 p-0 float-left">
               <ul class="list-group">
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" routerLink="home">Sponsorship</a>
+                  <a mat-button color="primary" [routerLink]="['/get-involved']">Get Involved</a>
                 </li>
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" routerLink="home">Contact Us</a>
+                  <a mat-button color="primary" [routerLink]="['/get-involved/become-a-member']">Become a Member</a>
                 </li>
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" routerLink="home">Gallery</a>
+                  <a mat-button color="primary" [routerLink]="['/contact-us']">Contact Us</a>
                 </li>
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" routerLink="home">Videos</a>
+                  <a mat-button color="primary" routerLink="home">Media & Gallery</a>
                 </li>
               </ul>
             </div>
@@ -59,22 +52,22 @@
             <div class="col-md-4 col-sm-4 col-6 mb-3 p-0 float-left">
               <ul class="list-group social-list">
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" routerLink="home">
+                  <a mat-button color="primary" target="_blank" href="https://www.instagram.com/icsn_uk/?hl=en">
                     <i class="fa fa-instagram" aria-hidden="true"></i> <span class="social-text">Instagram</span>
                   </a>
                 </li>
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" routerLink="home">
+                  <a mat-button color="primary" target="_blank" href="https://web.facebook.com/ICSNUK/">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i> <span class="social-text">FaceBook</span>
                   </a>
                 </li>
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" routerLink="home">
+                  <a mat-button color="primary" target="_blank" href="https://twitter.com/icsn_uk?lang=en">
                     <i class="fa fa-twitter-square" aria-hidden="true"></i> <span class="social-text">Twitter</span>
                   </a>
                 </li>
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" routerLink="home">
+                  <a mat-button color="primary" target="_blank" href="https://www.linkedin.com/company/igbo-cultural-&-support-network">
                     <i class="fa fa-linkedin-square" aria-hidden="true"></i> <span class="social-text">Linkedin</span>
                   </a>
                 </li>
@@ -101,13 +94,19 @@
                 <div class="form-group">
                   <input type="password" placeholder="Re-type Password" class="form-control" id="pwd">
                 </div>
+                <div class="form-group form-check text-left mb-1">
+                  <label class="form-check-label">
+                    <input class="form-check-input pl-0" type="checkbox">
+                    <small class="text-white">I am of Igbo Ancestory?</small>
+                  </label>
+                </div>
                 <div class="form-group form-check text-left">
                   <label class="form-check-label">
                     <input class="form-check-input pl-0" type="checkbox">
-                    <small class="text-white">Would you like to recieve emails from us?</small>
+                    <small class="text-white">I am happy to also be contacted by Igbo businesses?</small>
                   </label>
                 </div>
-                <button mat-raised-button>Register</button>
+                <a mat-raised-button class="btn-block" (click)="register()">Register</a>
               </form>
             </div>
 

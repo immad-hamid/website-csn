@@ -12,6 +12,7 @@ import { CardsModule } from './../../shared/components/cards/cards.module';
 import { SectionHeaderModule } from './../../shared/components/section-header/section-header.module';
 import { StripModule } from './../../shared/components/strip/strip.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
     StripModule,
     SectionHeaderModule,
     MatSnackBarModule,
+    MatCarouselModule,
     RouterModule.forChild(routes)
   ],
   exports: [

@@ -22,39 +22,38 @@
     </mat-nav-list>
     
   </mat-sidenav>
+  
   <mat-sidenav-content>
-    
-    <app-top-toolbar></app-top-toolbar>
 
-    <!-- <mat-divider></mat-divider> -->
+    <div class="sticky" style="position: fixed; z-index: 99; width: 100%; float: left; padding-right: 16px;">
+      <app-top-toolbar></app-top-toolbar>
 
-    <mat-toolbar>
-      <span>
-        <figure [routerLink]="['/home']" style="cursor: pointer">
-          <img class="mw-100" style="width: 54px;" src="assets/img/logo-black-text.png" alt="ICSN">
-        </figure>
-      </span>
+      <mat-toolbar>
+        <span>
+          <figure [routerLink]="['/home']" style="cursor: pointer">
+            <img class="mw-100" style="width: 54px;" src="assets/img/logo-black-text.png" alt="ICSN">
+          </figure>
+        </span>
 
-      <span class="spacer"></span>
+        <span class="spacer"></span>
 
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-
-      <!-- <span class="spacer" *ngIf="!isHandset$ | async"></span> -->
-
-      <!-- <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a> -->
-      <app-header></app-header>
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <app-header></app-header>
     
     </mat-toolbar>
+
+  </div>
+
     <!-- Add Content Here -->
+    <div id="topview"></div>
+    <div style="margin-bottom: 94px"></div>
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
