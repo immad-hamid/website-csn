@@ -10,12 +10,11 @@ export class BannerComponent implements OnInit {
 
   slides: any[] = [
     // tslint:disable-next-line:max-line-length
-    { image: 'assets/img/banner-two.png' },
-    // { image: 'assets/img/banner-two.png' },
+    { image: 'assets/banner/banner-one.png' },
     // tslint:disable-next-line:max-line-length
-    { image: 'assets/img/banner-one.png' },
+    { image: 'assets/banner/banner-two.png' },
     // tslint:disable-next-line:max-line-length
-    { image: 'assets/img/banner-three.png' }
+    { image: 'assets/banner/banner-three.png' }
   ];
 
   constructor() { }

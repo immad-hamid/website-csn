@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class HomeComponent implements OnInit {
   detail: { title: string; text: string; btn: string; };
 
-  constructor(private snackBar: MatSnackBar) { }
+  constructor() { }
 
   ngOnInit() {
     this.detail = {
@@ -18,28 +16,6 @@ export class HomeComponent implements OnInit {
       text: 'Your support will help ICSN to continue supporting Igbo\'s in Diasporate to connect with the Culture.',
       btn: 'Become a Member'
     };
-
-    if (environment.storage.getItem('welcome') === null) {
-      environment.storage.setItem('welcome', 'true');
-
-      setTimeout(() => {
-        this.openSnackBar();
-      }, 0);
-    }
-
-    // setTimeout(() => {
-    //   this.openSnackBar();
-    // }, 0);
-  }
-
-  openSnackBar() {
-    this.snackBar.open('Welcome to ICSN', 'Close',
-      {
-        duration: 3000,
-        horizontalPosition: 'right',
-        verticalPosition: 'bottom'
-      }
-    );
   }
 
 }

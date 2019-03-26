@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProfileComponent implements OnInit {
   heading = 'Edit Profile';
+
   foods: any[] = [
     { value: 'Abia State Nigeria', viewValue: 'Abia State Nigeria' },
     { value: 'Anambra State Nigeria', viewValue: 'Anambra State Nigeria' },
@@ -31,7 +32,6 @@ export class EditProfileComponent implements OnInit {
     { value: 'Female', viewValue: 'Female' },
     { value: 'Prefer Not to Say', viewValue: 'Prefer Not to Say' }
   ];
-
 
   constructor() { }
 

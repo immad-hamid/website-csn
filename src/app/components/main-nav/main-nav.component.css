@@ -24,3 +24,26 @@ figure::focus {
   top: 0;
   z-index: 1;
 }
+
+.sticky {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  float: left;
+  /* padding-right: 8px; */
+}
+
+.top-spacer {
+  margin-bottom: 94px
+}
+
+:host >>> .content {
+  height: -moz-available;          /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+}
+
+@media (max-width: 600px) {
+  .top-spacer {
+    margin-bottom: 86px
+  }
+}
