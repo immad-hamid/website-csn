@@ -7,7 +7,11 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" mat-flat-button [routerLink]="['/about-us']">About Us</a>
+        <a class="nav-link" mat-flat-button [matMenuTriggerFor]="menu">About Us</a>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="['/about-us']">Overview</button>
+          <button mat-menu-item [routerLink]="['/our-team']">Our Team</button>
+        </mat-menu>
       
         <!-- <mat-card class="sub-dropdown" *ngIf="showSubMenu">
           <mat-nav-list>

@@ -6,6 +6,7 @@ import { MaterialModule } from '../material/material.module';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { TopToolbarComponent } from './top-toolbar/top-toolbar.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -28,6 +29,7 @@ import { SignupComponent } from './signup/signup.component';
     MaterialModule,
     LayoutModule,
     MatToolbarModule,
+    MatMenuModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,

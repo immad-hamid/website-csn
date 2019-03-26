@@ -24,6 +24,42 @@
         
         <p class="mb-2">
           <mat-form-field appearance="outline">
+            <mat-label>Heritage state of origin</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+            <mat-hint>Heritage state of origin is optional!</mat-hint>
+          </mat-form-field>
+        </p>
+        
+        <p class="mb-2">
+          <mat-form-field appearance="outline">
+            <mat-label>Age</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let age of ages" [value]="age.value">
+                {{age.viewValue}}
+              </mat-option>
+            </mat-select>
+            <mat-hint>Contact Number is optional!</mat-hint>
+          </mat-form-field>
+        </p>
+        
+        <p class="mb-2">
+          <mat-form-field appearance="outline">
+            <mat-label>Gender</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                {{gender.viewValue}}
+              </mat-option>
+            </mat-select>
+            <mat-hint>Gender is optional!</mat-hint>
+          </mat-form-field>
+        </p>
+        
+        <p class="mb-2">
+          <mat-form-field appearance="outline">
             <mat-label>Contact Number</mat-label>
             <input matInput value="ezim@gmail.com">
             <mat-hint>Contact Number is optional!</mat-hint>

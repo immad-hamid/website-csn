@@ -19,7 +19,11 @@
             <div class="col-md-4 col-sm-4 col-6 mb-3 p-0 float-left">
               <ul class="list-group">
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" [routerLink]="['/about-us']">About</a>
+                  <a mat-button color="primary" [matMenuTriggerFor]="menu">About</a>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item [routerLink]="['/about-us']">Overview</button>
+                    <button mat-menu-item [routerLink]="['/our-team']">Our Team</button>
+                  </mat-menu>
                 </li>
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
                   <a mat-button color="primary" [routerLink]="['/icsn-programmes']">Programmes</a>
@@ -98,6 +102,12 @@
                   <label class="form-check-label">
                     <input class="form-check-input pl-0" type="checkbox">
                     <small class="text-white">I am of Igbo Ancestory?</small>
+                  </label>
+                </div>
+                <div class="form-group form-check text-left mb-1">
+                  <label class="form-check-label">
+                    <input class="form-check-input pl-0" type="checkbox">
+                    <small class="text-white">I agree to ICSN storing my information and using it solely for the purpose of contacting me about ICSN related activities. Read more</small>
                   </label>
                 </div>
                 <div class="form-group form-check text-left">
