@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NewsAndUpdatesComponent } from './news-and-updates.component';
 import { SubHeaderModule } from 'src/app/shared/components/sub-header/sub-header.module';
 import { CardsModule } from 'src/app/shared/components/cards/cards.module';
+import { MatChipsModule } from '@angular/material/chips';
 import { MaterialModule } from 'src/app/material/material.module';
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
     CommonModule,
     SubHeaderModule,
     CardsModule,
+    MatChipsModule,
     MaterialModule,
     RouterModule.forChild(routes)
   ]

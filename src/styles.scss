@@ -104,6 +104,12 @@ a {
     white-space: normal !important;
 }
 
+.filter-row {
+    mat-chip-list .mat-chip-list-wrapper {
+        display: inline-block !important;
+    }
+}
+
 // paragraph
 .para-bold {
     font-size: 20px;

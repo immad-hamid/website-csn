@@ -3,6 +3,40 @@
 
 <section class="sec-space">
   <div class="container">
+
+    <div class="row filter-row">
+      <div class="col-sm-12">
+        <h4 class="mb-2">Search By Tags:</h4>
+        
+        <div class="row">
+          <div class="col-sm-8">
+            <mat-form-field class="mr-2" style="max-width: 100%; width: 100%">
+              <mat-chip-list #chipList>
+                <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
+                          [removable]="removable" (removed)="remove(fruit)">
+                  {{fruit.name}}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input placeholder="New Tags..."
+                        [matChipInputFor]="chipList"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                        [matChipInputAddOnBlur]="addOnBlur"
+                        (matChipInputTokenEnd)="add($event)">
+              </mat-chip-list>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <button mat-raised-button color="accent">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 mb-4">
+      </div>
+    </div>
+
     <div class="row">
 
       <ng-container *ngFor="let item of items">
@@ -14,6 +48,14 @@
               <div class="text-right">
                 <a mat-flat-button color="primary" [routerLink]="['125']">Read More</a>
               </div>
+            </div>
+            <div class="card-footer">
+              <mat-chip-list>
+                <mat-chip>One tag</mat-chip>
+                <mat-chip>Two tag</mat-chip>
+                <mat-chip>One tag</mat-chip>
+                <mat-chip>Two tag</mat-chip>
+              </mat-chip-list>
             </div>
           </div>
         </div>

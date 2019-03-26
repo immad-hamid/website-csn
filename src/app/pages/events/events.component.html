@@ -3,6 +3,31 @@
 
 <section class="sec-space">
   <div class="container">
+    <div class="row filter-row">
+      <div class="col-sm-12">
+        <h4 class="mb-2">Find Events:</h4>
+
+        <mat-form-field class="mr-2" appearance="outline">
+          <input matInput [matDatepicker]="fromDate" placeholder="From Date" readonly>
+          <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #fromDate></mat-datepicker>
+        </mat-form-field>
+        
+        <mat-form-field class="mr-3" appearance="outline">
+          <input matInput [matDatepicker]="toDate" placeholder="To Date" readonly>
+          <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #toDate></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-raised-button color="accent">Search</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 mb-4">
+      </div>
+    </div>
+
     <div class="row">
 
       <ng-container *ngFor="let item of items">
