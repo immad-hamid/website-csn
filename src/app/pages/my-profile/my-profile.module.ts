@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MyProfileComponent } from './my-profile.component';
-import { SubHeaderModule } from 'src/app/shared/components/sub-header/sub-header.module';
+import { SubHeaderModule } from './../../shared/components/sub-header/sub-header.module';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';

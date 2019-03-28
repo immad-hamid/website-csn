@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
-import { environment } from 'src/environments/environment';
+import { environment } from './../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +13,13 @@ export class AppComponent implements OnInit {
   constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    if (environment.storage.getItem('welcome') === null) {
-      environment.storage.setItem('welcome', 'true');
+    // if (sessionStorage.getItem('welcome') === null) {
+    //   sessionStorage.setItem('welcome', 'true');
 
-      setTimeout(() => {
-        this.openSnackBar();
-      }, 0);
-    }
+    //   setTimeout(() => {
+    //     this.openSnackBar();
+    //   }, 0);
+    // }
   }
 
   openSnackBar() {

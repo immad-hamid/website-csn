@@ -4,19 +4,19 @@
     font-family: 'Oswald', Arial, sans-serif;
     position: relative;
     margin: 10px;
-    // min-width: 230px;
-    // max-width: 315px;
     width: 100%;
     background: #ffffff;
     text-align: center;
     color: #000000;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    -webkit-box-sizing: border-box;
     font-size: 16px;
     padding: 15px;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    max-width: 320px;
+    margin: auto;
 }
 .snip1423 * {
     -webkit-box-sizing: padding-box;

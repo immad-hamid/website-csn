@@ -24,10 +24,20 @@
         h2 {
             font-size: 42px;
             padding-top: 20px !important;
+            padding-right: 15px;
+            padding-left: 15px;
             line-height: 46px;
             &::before {
                 height: 6px !important;
             }
+        }
+    }
+}
+
+@media (max-width: 567px) {
+    .sec-wrapper {
+        h2 {
+            font-size: 36px;
         }
     }
 }

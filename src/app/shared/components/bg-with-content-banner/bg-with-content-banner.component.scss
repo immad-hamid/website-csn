@@ -25,6 +25,10 @@
         position: relative;
         z-index: 2;
         color: #ffffff;
+        h2 {
+            padding-right: 5px;
+            padding-left: 5px;
+        }
     }
 }
 
@@ -34,4 +38,13 @@
     background: -moz-linear-gradient(top, #076633 0%, #f292008c 65%);
     background: -webkit-linear-gradient(top, #076633 0%,#f292008c 65%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#60a9ff', endColorstr='#4394f4',GradientType=0 );
+}
+
+@media (max-width: 767px) {
+    .content-area {
+        h2 {
+            font-size: 50px;
+            line-height: 68px;        
+        }
+    }
 }

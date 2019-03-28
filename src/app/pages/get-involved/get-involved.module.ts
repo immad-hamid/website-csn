@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GetInvolvedComponent } from './get-involved.component';
-import { SubHeaderModule } from 'src/app/shared/components/sub-header/sub-header.module';
+import { SubHeaderModule } from './../../shared/components/sub-header/sub-header.module';
 import { RouterModule, Routes } from '@angular/router';
-import { BgWithContentBannerModule } from 'src/app/shared/components/bg-with-content-banner/bg-with-content-banner.module';
+import { BgWithContentBannerModule } from './../../shared/components/bg-with-content-banner/bg-with-content-banner.module';
 
 const routes: Routes = [
   { path: '', component: GetInvolvedComponent },

@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { EventsComponent } from './events.component';
-import { SubHeaderModule } from 'src/app/shared/components/sub-header/sub-header.module';
-import { CardsModule } from 'src/app/shared/components/cards/cards.module';
-import { MaterialModule } from 'src/app/material/material.module';
+import { SubHeaderModule } from './../../shared/components/sub-header/sub-header.module';
+import { CardsModule } from './../../shared/components/cards/cards.module';
+import { MaterialModule } from './../../material/material.module';
 import { MatNativeDateModule } from '@angular/material';
 
 const routes: Routes = [
