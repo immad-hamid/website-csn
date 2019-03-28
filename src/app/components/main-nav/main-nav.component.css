@@ -27,7 +27,7 @@ figure::focus {
 
 .sticky {
   position: fixed;
-  z-index: 99;
+  z-index: 101;
   width: 100%;
   float: left;
   /* padding-right: 8px; */
