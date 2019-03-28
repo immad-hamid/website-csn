@@ -3,5 +3,14 @@
     "project": "icsn-client",
     "skipInstall": false,
     "directory": "."
+  },
+  "pwa": {
+    "--": [
+      "[--serverModule",
+      "server.module.ts]"
+    ],
+    "project": "icsn-client",
+    "skipInstall": false,
+    "directory": "."
   }
 }

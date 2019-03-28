@@ -1,4 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
+import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 // import { WINDOW, LOCAL_STORAGE } from '@ng-toolkit/universal';
 // import { environment } from './../environments/environment';
@@ -12,18 +13,23 @@ export class AppComponent implements OnInit {
   title = 'icsn-client';
 
   constructor(
+    private swUpdate: SwUpdate,
     private snackBar: MatSnackBar
   ) {
   }
 
   ngOnInit(): void {
-    // if (sessionStorage.getItem('welcome') === null) {
-    //   sessionStorage.setItem('welcome', 'true');
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.available.subscribe((evt) => {
+        console.log('service worker updated');
+      });
 
-    //   setTimeout(() => {
-    //     this.openSnackBar();
-    //   }, 0);
-    // }
+      this.swUpdate.checkForUpdate().then(() => {
+        // noop
+      }).catch((err) => {
+        console.error('error when checking for update', err);
+      });
+    }
   }
 
   openSnackBar() {
