@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
-import { environment } from './../environments/environment';
+// import { WINDOW, LOCAL_STORAGE } from '@ng-toolkit/universal';
+// import { environment } from './../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,10 @@ import { environment } from './../environments/environment';
 export class AppComponent implements OnInit {
   title = 'icsn-client';
 
-  constructor(private snackBar: MatSnackBar) { }
+  constructor(
+    private snackBar: MatSnackBar
+  ) {
+  }
 
   ngOnInit(): void {
     // if (sessionStorage.getItem('welcome') === null) {
