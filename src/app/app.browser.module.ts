@@ -11,13 +11,27 @@ import { environment } from '../environments/environment';
 
     imports: [
         BrowserModule.withServerTransition({ appId: 'app-root' }),
-
         AppModule,
-
         BrowserAnimationsModule,
-
-        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ]
 })
 export class AppBrowserModule { }
+
+// imports: [
+//     BrowserModule.withServerTransition({ appId: 'app-root' }),
+
+//     AppModule,
+
+//     BrowserAnimationsModule,
+
+//     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+
+// ]
+
+
+// AppModule,
+// BrowserAnimationsModule,
+// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+// BrowserModule.withServerTransition({ appId: 'app-root' })
+
