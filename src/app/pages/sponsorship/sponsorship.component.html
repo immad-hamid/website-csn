@@ -1,41 +1,77 @@
 <app-sub-header [heading]="heading"></app-sub-header>
 
+<section><div class="row"><div class="col-sm-12">
+    <input type="number" [(ngModel)]="finalAmount" style="padding-bottom: 10px;">
+    <h2 *ngIf="paypalLoad">Paypal button is loading</h2>
+    <div id="paypal-checkout-btn"></div>
+</div></div></section>
+
 <div class="background">
     <div class="container">
         <div class="panel pricing-table">
         
         <div class="pricing-plan">
-            <h5 class="pricing-header">Plan One</h5>
-            <ul class="pricing-features">
-            <li class="pricing-features-item">Blessings</li>
-            <li class="pricing-features-item">Free Dance Classes</li>
-            </ul>
-            <span class="pricing-price">£10</span>
-            <a href="#/" class="pricing-button">I am Down</a>
-        </div>
-        
-        <div class="pricing-plan">
-            <h5 class="pricing-header">Plan Two</h5>
-            <ul class="pricing-features">
-            <li class="pricing-features-item">Blessings</li>
-            <li class="pricing-features-item">Free Dance & Cooking Classes</li>
-            </ul>
-            <span class="pricing-price">£20</span>
-            <a href="#/" class="pricing-button is-featured">I am Down</a>
-        </div>
-        
-        <div class="pricing-plan">
-            <h5 class="pricing-header">Plan Three</h5>
-            <ul class="pricing-features">
-            <li class="pricing-features-item">Blessings</li>
-            <li class="pricing-features-item">Discounts</li>
+            <h5 class="pricing-header">Register for Non-Igbo Associate Membership</h5>
+            <ul class="pricing-features pl-0">
+                <li class="pricing-features-item"><p>Access to All Events, Discounts, support and eligibility to vote at elections only.</p></li>
             </ul>
             <span class="pricing-price">£35</span>
-            <a href="#/" class="pricing-button">I am Down</a>
+            <a 
+                mat-flat-button color="primary" 
+                class="text-uppercase btn-block mt-4"
+                style="height: 50px; line-height: 50px; background-color: #fefefe; color: #106a36; border: 1px solid #106a36;">
+                Register
+            </a>
+        </div>
+        
+        <div class="pricing-plan">
+            <h5 class="pricing-header">Register for Igbo Heritage Membership</h5>
+            <ul class="pricing-features pl-0">
+                <li class="pricing-features-item"><p>Access to All Events, Discounts, support and eligibility to vote and be elected as an executive and trustee.</p></li>
+            </ul>
+            <span class="pricing-price">£35</span>
+            <a 
+                mat-flat-button color="primary" 
+                class="text-uppercase btn-block mt-4"
+                style="height: 50px; line-height: 50px; background-color: #106a36">
+                Register
+            </a>
+        </div>
+        
+        <div class="pricing-plan">
+            <h5 class="pricing-header">Register for Business Membership</h5>
+            <ul class="pricing-features pl-0">
+                <li class="pricing-features-item"><p>Listing on our business directory, access to business advice and direct marketing to members.</p></li>
+            </ul>
+            <span class="pricing-price">£45</span>
+            <a 
+                mat-flat-button color="primary" 
+                class="text-uppercase btn-block mt-4"
+                style="height: 50px; line-height: 50px; background-color: #fefefe; color: #106a36; border: 1px solid #106a36;">
+                Register
+            </a>
         </div>
         
         </div>
     </div>
 </div>
+
+<section class="sec-space-b">
+    <div class="container" style="padding-top: 0;">
+        <div class="panel pricing-table text-center">
+
+            <!-- <div class="col-sm-12">
+                <h5 class="pricing-header inline-block m-0 mr-2" style="line-height: 54px">Register for Business Membership Only !!!</h5>
+                <a mat-flat-button color="accent">Register</a>
+            </div> -->
+            
+            <a 
+                mat-flat-button color="primary" 
+                class="btn-block text-uppercase reg-btn">
+                Register for Business Membership Only
+            </a>
+        </div>
+    </div>
+</section>
 
 <section class="sec-space-b"></section>
