@@ -23,7 +23,7 @@ import 'zone.js/dist/zone-node';
     // const DIST_FOLDER = join(process.cwd(), 'dist');
     
     const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./dist/server/main');
-    
+
     app.engine('html', ngExpressEngine({
       bootstrap: AppServerModuleNgFactory,
       providers: [
@@ -44,7 +44,9 @@ import 'zone.js/dist/zone-node';
     }));
     
     app.get('/*', (req, res) => {
+      console.log('got request');
       res.render('index', {req, res}, (err, html) => {
+        console.log('RESPOND FROM render');
         if (html) {
           res.send(html);
         } else {

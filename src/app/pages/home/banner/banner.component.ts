@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { MatCarousel, MatCarouselComponent } from '@ngmodule/material-carousel';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-home-banner',
@@ -17,7 +18,9 @@ export class BannerComponent implements OnInit {
     { image: 'assets/banner/banner-three.png' }
   ];
 
-  constructor() { }
+  public isBrowser = isPlatformBrowser(this.platformId);
+
+  constructor(@Inject(PLATFORM_ID) private platformId: any) { }
 
   ngOnInit() {
   }

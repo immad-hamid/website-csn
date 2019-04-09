@@ -1,6 +1,7 @@
 import { SwUpdate } from '@angular/service-worker';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
+import { isPlatformServer } from '@angular/common';
 // import { WINDOW, LOCAL_STORAGE } from '@ng-toolkit/universal';
 // import { environment } from './../environments/environment';
 
@@ -14,11 +15,17 @@ export class AppComponent implements OnInit {
 
   constructor(
     private swUpdate: SwUpdate,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    @Inject(PLATFORM_ID) private platformId: any
   ) {
+    console.log('app component constructor');
   }
 
   ngOnInit(): void {
+    // if (isPlatformServer(this.platformId)) {
+    //   return;
+    // }
+    console.log('app component on init');
     if (this.swUpdate.isEnabled) {
       this.swUpdate.available.subscribe((evt) => {
         console.log('service worker updated');
@@ -30,6 +37,7 @@ export class AppComponent implements OnInit {
         console.error('error when checking for update', err);
       });
     }
+    console.log('app component on init');
   }
 
   openSnackBar() {
@@ -40,5 +48,9 @@ export class AppComponent implements OnInit {
         verticalPosition: 'bottom'
       }
     );
+  }
+
+  ngAfterViewInit() {
+    console.log('app component after view init');
   }
 }

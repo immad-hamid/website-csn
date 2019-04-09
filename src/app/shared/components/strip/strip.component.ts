@@ -8,9 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class StripComponent implements OnInit {
   @Input() detail;
 
-  constructor() { }
+  constructor() { 
+    console.log('strip component constructor.')
+  }
 
   ngOnInit() {
+    console.log('strip component init');
   }
 
 }

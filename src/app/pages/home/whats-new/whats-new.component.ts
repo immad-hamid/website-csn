@@ -17,9 +17,12 @@ export class WhatsNewComponent implements OnInit {
     content: string;
   }[];
 
-  constructor() { }
+  constructor() { 
+    console.log('whats new constructor');
+  }
 
   ngOnInit() {
+    console.log('whats new init');
     this.detail = {
       title: 'what\'s new this month',
       // tslint:disable-next-line:max-line-length
@@ -49,6 +52,7 @@ export class WhatsNewComponent implements OnInit {
         content: 'We host regular sessions of Language, cooking and dance schools through out the year all hosted in a fun and supportive environment'
       }
     ];
+    console.log('whats new init');
   }
 
 }
