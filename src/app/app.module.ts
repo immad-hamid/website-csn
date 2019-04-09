@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layouts/layout.module';
 // common components module
 import { ComponentsModule } from './components/common.module';
+// services
+import { HttpService } from './services/http.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ComponentsModule } from './components/common.module';
     // common components
     ComponentsModule
   ],
-  providers: [],
+  providers: [
+    HttpService
+  ],
 })
 export class AppModule { }

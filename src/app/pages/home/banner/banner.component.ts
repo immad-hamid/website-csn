@@ -10,12 +10,8 @@ import { isPlatformBrowser } from '@angular/common';
 export class BannerComponent implements OnInit {
 
   slides: any[] = [
-    // tslint:disable-next-line:max-line-length
-    { image: 'assets/banner/banner-one.png' },
-    // tslint:disable-next-line:max-line-length
-    { image: 'assets/banner/banner-two.png' },
-    // tslint:disable-next-line:max-line-length
-    { image: 'assets/banner/banner-three.png' }
+    { image: 'assets/banner/banner-one.jpg' },
+    { image: 'assets/banner/banner-two.jpg' }
   ];
 
   public isBrowser = isPlatformBrowser(this.platformId);

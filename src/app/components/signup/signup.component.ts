@@ -9,6 +9,7 @@ import {
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  modelClass = true;
 
   constructor(
     // tslint:disable-next-line:no-shadowed-variable

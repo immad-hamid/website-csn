@@ -48,6 +48,9 @@
 }
 
 @media (max-width: 767px) {
+    #strip * {
+        text-align: center!important;
+    }
     p {
         font-size: 17px !important;
         margin-top: 20px !important;
@@ -60,5 +63,9 @@
 
     .pr-0 {
         padding-right: 15px !important;
+    }
+
+    a.btn-lg.btn-block.mat-raised-button {
+        max-width: 300px;
     }
 }

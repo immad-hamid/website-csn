@@ -20,16 +20,16 @@ export class RecentBlogPostsComponent implements OnInit {
         id: 1,
         avatar: true,
         sub: 'ICSN',
-        img: 'assets/img/blog1.png',
+        img: 'assets/img/blog3.png',
         heading: 'GHM',
         // tslint:disable-next-line:max-line-length
-        content: 'We host regular sessions of Language, cooking and dance schools through out the year all hosted in a fun and supportive environment'
+        content: 'Every second Sunday of the month we hold a themed ‘General House Meeting’ that will appeal to our members and those looking to learn more about the Igbo culture. To find out the theme for our next GHM check out the events page'
       },
       {
         id: 2,
         avatar: true,
         sub: 'ICSN',
-        img: 'assets/img/blog2.png',
+        img: 'assets/img/blog1.png',
         heading: 'Programmes',
         // tslint:disable-next-line:max-line-length
         content: 'We host regular sessions of Language, cooking and dance schools through out the year all hosted in a fun and supportive environment'
@@ -38,10 +38,10 @@ export class RecentBlogPostsComponent implements OnInit {
         id: 3,
         avatar: true,
         sub: 'ICSN',
-        img: 'assets/img/blog3.png',
+        img: 'assets/img/blog2.png',
         heading: 'Youth Development',
         // tslint:disable-next-line:max-line-length
-        content: 'We host regular sessions of Language, cooking and dance schools through out the year all hosted in a fun and supportive environment'
+        content: 'Building a good relationship with our young people is essential to help them further identify with who they are as Igbo’s and to know that ICSN is here to look out for their personal, cultural and career development'
       }
     ];
   }

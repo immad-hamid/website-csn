@@ -61,7 +61,7 @@
                   </a>
                 </li>
                 <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                  <a mat-button color="primary" target="_blank" href="https://web.facebook.com/ICSNUK/">
+                  <a mat-button color="primary" target="_blank" href="https://www.facebook.com/groups/igboculturalsupportnetwork/">
                     <i class="fa fa-facebook-official" aria-hidden="true"></i> <span class="social-text">FaceBook</span>
                   </a>
                 </li>
@@ -81,7 +81,7 @@
 
         </div>
 
-        <div class="col-md-4 col-sm-8 col-12 mb-3 text-center">
+        <div class="col-md-4 col-sm-8 col-12 mb-3">
           <div class="row">
 
             <div class="col-sm-12">
@@ -98,29 +98,15 @@
                   <label for="password" style="display: none"></label>
                   <input type="password" placeholder="Password" class="form-control" id="pwd">
                 </div>
-                <div class="form-group">
-                  <label for="password" style="display: none"></label>
-                  <input type="password" placeholder="Re-type Password" class="form-control" id="pwd">
-                </div>
-                <div class="form-group form-check text-left mb-1">
-                  <label class="form-check-label">
-                    <input class="form-check-input pl-0" type="checkbox">
-                    <small class="text-white">I am of Igbo Ancestory?</small>
-                  </label>
-                </div>
-                <div class="form-group form-check text-left mb-1">
-                  <label class="form-check-label">
-                    <input class="form-check-input pl-0" type="checkbox">
-                    <small class="text-white">I agree to ICSN storing my information and using it solely for the purpose of contacting me about ICSN related activities. Read more</small>
-                  </label>
-                </div>
-                <div class="form-group form-check text-left">
-                  <label class="form-check-label">
-                    <input class="form-check-input pl-0" type="checkbox">
-                    <small class="text-white">I am happy to also be contacted by Igbo businesses?</small>
-                  </label>
-                </div>
-                <a mat-raised-button class="btn-block" (click)="register()">Register</a>
+
+                <p class="mb-2">
+                  <mat-checkbox [checked]="modelClass" class="mat-hint small text-white">I am of Igbo Ancestory?</mat-checkbox>
+                  <mat-checkbox [checked]="modelClass" class="mat-hint small text-white">I agree to ICSN storing my information and using it solely for the purpose of contacting me about ICSN related activities. Read more</mat-checkbox>
+                  <mat-checkbox [checked]="modelClass" class="mat-hint small text-white">I am happy to also be contacted by Igbo businesses?</mat-checkbox>
+                  <mat-checkbox [checked]="modelClass" class="mat-hint small text-white">I would like to receive regular email updates from us with all of our latest news, events and ways to get involved</mat-checkbox>
+                </p>
+
+                <button mat-raised-button class="btn-block" [disabled]="true" (click)="register()">Register</button>
               </form>
             </div>
 
