@@ -67,8 +67,6 @@ export class HttpService {
 
   get(url) {
     const headers = this.createAuthorizationHeader(new HttpHeaders());
-    console.log(headers);
-    debugger;
     return this.http.get(environment.url + url, {
       headers
     })

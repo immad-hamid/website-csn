@@ -8,17 +8,15 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <p>
-          ICSN stands for the <strong>Cultural and Support Network</strong> and put simply we are a proud non-profit organisation that was founded in 1998 by the wonderful <strong>Umunne Olie</strong> as a forum to empower young Igbo people living in diaspora. ICSN is a hub for young professional Igbo’s aged between 18 to 40 years living, studying or working in the diaspora.
-        </p>
-        <p>
-          Our tag Line is <strong>“Igwebike, Udo na Oganiru”</strong> which when translated into  means <strong>“Unity is Strength, Peace and Progression”</strong>.
-        </p>
-        <p>
-          ICSN is proudly the largest Igbo Union not only in the UK but in Europe with over 2,500 members and counting.
-        </p>
+
+      <div class="col-md-12" *ngIf="(data$ | async)?.data as data; else loading">
+        <div [innerHTML]="data.content"></div>
       </div>
+
+      <ng-template #loading>
+          Loading stuff...
+      </ng-template>
+      
     </div>
   </div>
 </section>
@@ -28,29 +26,24 @@
   <div class="container">
     <div class="row">
 
-      <!-- <div class="col-md-12">
-        <div class="card-group">
-          <div 
-            *ngFor="let post of posts"
-            class="col-md-4 pt-4">
-            <app-shared-card-image-content
-              [post]="post">
-            </app-shared-card-image-content> 
-          </div>
-        </div>
-      </div> -->
-
       <div class="col-md-12">
         <div class="card-group row">
-          <div 
-            class="col-md-4"
-            *ngFor="let things of thingsWeDo">
-            <app-shared-cards-without-image
-              [data]="things">
-            </app-shared-cards-without-image>
-          </div>
+          
+          <ng-container *ngIf="(data$ | async)?.data?.programs as programs; else loading">
+            <div class="col-md-4" *ngFor="let program of programs">
+              <app-shared-cards-without-image
+                [data]="program">
+              </app-shared-cards-without-image>
+            </div>
+            <ng-template #loading>
+                Loading stuff...
+            </ng-template>
+          </ng-container>
+          
+          
         </div>
       </div>
+
     </div>
   </div>
 </section>
