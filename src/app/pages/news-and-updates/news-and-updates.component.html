@@ -39,22 +39,19 @@
 
     <div class="row">
 
-      <ng-container *ngFor="let item of items">
+      <ng-container *ngFor="let item of blogs">
         <div class="col-sm-6">
           <div class="card mb-4">
-            <div class="card-body">
-              <h5 class="card-title">Blog Heading</h5>
-              <p class="card-text">With supporting text. With supporting text below as a natural lead-in to additional content. With supporting text. With supporting text below as a natural lead-in to additional content.</p>
+             <div class="card-body">
+              <h5 class="card-title">{{item.title}}</h5>
+              <p class="card-text">{{item.description}}</p>
               <div class="text-right">
-                <a mat-flat-button color="primary" [routerLink]="['125']">Read More</a>
+                <a mat-flat-button color="primary" [routerLink]="[item._id]">Read More</a>
               </div>
             </div>
             <div class="card-footer">
               <mat-chip-list>
-                <mat-chip>One tag</mat-chip>
-                <mat-chip>Two tag</mat-chip>
-                <mat-chip>One tag</mat-chip>
-                <mat-chip>Two tag</mat-chip>
+                <mat-chip *ngFor="let tag of item.tags">{{tag}}</mat-chip>
               </mat-chip-list>
             </div>
           </div>

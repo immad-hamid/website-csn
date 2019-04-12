@@ -1,18 +1,18 @@
-<div class="jumbotron" [ngStyle]="{'background' : 'url(assets/banner/banner-three.png)'}">
-  
+<div *ngIf="data && data.banner" class="jumbotron" [ngStyle]="{'background' : 'url('+ data.banner.link +')'}">
+
 </div>
 
 <section class="sec-space-b">
   <div class="container box-content mb-5" style="margin-top: -65px;">
     <div class="row">
       <div class="col-md-12">
-          <h1 class="display-4">Hello, world!</h1>
-          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-          <hr class="my-4">
-          <p>It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container.</p>
-          <p>It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container.</p>
-          <p>It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container.</p>
-          <p>It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container. It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <h1 class="display-4">{{data ? data.title : ''}}</h1>
+        <mat-chip-list *ngIf="data && data.tags">
+          <mat-chip *ngFor="let tag of data.tags">{{tag}}</mat-chip>
+        </mat-chip-list>
+        <p class="lead">{{data ? data.description : ''}}</p>
+        <hr class="my-4">
+        <div class="content" [innerHTML]="data ? data.html : ''"></div>
       </div>
     </div>
   </div>
