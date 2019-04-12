@@ -12,7 +12,6 @@ export class SingleNewsAndUpdatesComponent implements OnInit {
   constructor(private apiService: EndPointsService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this.activatedRoute.snapshot.params.id);
     this.apiService.getBlog(this.activatedRoute.snapshot.params.id).subscribe((res: any) => {
       console.log(res);
       this.blog = res.data;

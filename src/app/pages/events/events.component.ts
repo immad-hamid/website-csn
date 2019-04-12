@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EndPointsService } from '../../services/end-points.service';
 
 @Component({
   selector: 'app-events',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
   heading = 'Events';
-  items: number[];
+  events;
 
-  constructor() { }
+  constructor(private apiService: EndPointsService) { }
 
   ngOnInit() {
-    this.items = [1, 2, 3, 4, 5, 6];
+    this.apiService.getEvents().subscribe((res: any) => {
+      console.log(res);
+      this.events = res.data;
+    }, err => {
+      console.log(err);
+    });
   }
 }
