@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material';
+import { EndPointsService } from '../../services/end-points.service';
 
 @Component({
   selector: 'app-news-and-updates',
@@ -18,6 +19,7 @@ export class NewsAndUpdatesComponent implements OnInit {
   fruits: any[] = [
     // {name: 'Lemon'}
   ];
+  blogs = [];
 
   add(event: MatChipInputEvent): void {
     const input = event.input;
@@ -25,7 +27,7 @@ export class NewsAndUpdatesComponent implements OnInit {
 
     // Add our fruit
     if ((value || '').trim()) {
-      this.fruits.push({name: value.trim()});
+      this.fruits.push({ name: value.trim() });
     }
 
     // Reset the input value
@@ -42,10 +44,16 @@ export class NewsAndUpdatesComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private apiService: EndPointsService) { }
 
   ngOnInit() {
     this.items = [1, 2, 3, 4, 5, 6];
+    this.apiService.getBlogs().subscribe((res: any) => {
+      console.log(res);
+      this.blogs = res.data;
+    }, err => {
+      console.log(err);
+    });
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-single-post-layout',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./single-post-layout.component.scss']
 })
 export class SinglePostLayoutComponent implements OnInit {
-
+  // tslint:disable-next-line:no-input-rename
+  @Input('data') data;
   constructor() { }
 
   ngOnInit() {
