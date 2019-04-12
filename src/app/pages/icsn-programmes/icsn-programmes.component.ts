@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EndPointsService } from 'src/app/services/end-points.service';
 
 @Component({
   selector: 'app-icsn-programmes',
@@ -8,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class IcsnProgrammesComponent implements OnInit {
   heading = 'ICSN Programmes';
   programs: { heading: string; content: string; img: string }[];
+  programsData: any;
 
-  constructor() { }
+  constructor(private endPointsService: EndPointsService) { }
 
   ngOnInit() {
+    this.endPointsService
+      .getPrograms()
+      .subscribe(
+        (res: any) => {
+          this.programsData = res.data;
+          console.log(this.programsData)
+        },
+        err => console.log(err)
+      );
+
     this.programs = [
       {
         heading: 'Language School',

@@ -1,11 +1,12 @@
 
-<span *ngIf="program.img; then withImgTemp; else withoutImgTemp"></span>
+<span *ngIf="program.color; then withImgTemp; else withoutImgTemp"></span>
 
 <ng-template #withImgTemp>
-  <div class="jumbotron text-center" [ngStyle]="{background: 'url(' + program.img + ')'}">
+  <div class="jumbotron text-center" [ngStyle]="{background: program.red ? 'url(' + program.banner + ')' : program.color}">
+  <!-- <div class="jumbotron text-center"> -->
     <div class="content-area">
-        <h2 class="text-white mb-4">{{ program?.heading }}</h2>
-        <p class="lead">{{ program?.content }}</p>
+        <h2 class="text-white mb-4">{{ program?.title }}</h2>
+        <p class="lead">{{ program?.description }}</p>
         <hr class="my-4">
         <p class="lead text-center">
           <a mat-button color="accent" class="text-uppercase">Learn More</a>
