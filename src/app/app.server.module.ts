@@ -21,31 +21,3 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     ]
 })
 export class AppServerModule { }
-
-
-// NgtPwaMockModule,
-// BrowserModule.withServerTransition({ appId: 'app-root' }),
-// AppModule,
-// ServerModule,
-// NoopAnimationsModule,
-// ModuleMapLoaderModule,
-// ServerTransferStateModule // comment
-
-
-// imports: [
-//     NgtPwaMockModule,
-//     ServerModule,
-//     NoopAnimationsModule,
-//     ModuleMapLoaderModule,
-//     ServerTransferStateModule,
-//     AppModule,
-//     BrowserModule.withServerTransition({ appId: 'app-root' })
-// ]
-
-// NgtPwaMockModule,
-// NoopAnimationsModule,
-// ModuleMapLoaderModule,
-// ServerTransferStateModule,
-// AppModule,
-// ServerModule,
-// BrowserModule.withServerTransition({ appId: 'app-root' })

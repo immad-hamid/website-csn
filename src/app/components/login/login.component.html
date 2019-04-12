@@ -6,12 +6,12 @@
 </div>
 
 <div class="modal-body">
-  <div class="row">
+  <form [formGroup]="loginForm" class="row">
     <div class="col-md-10 offset-md-1">
       <p class="mb-2">
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Email">
+          <input formControlName="userName" matInput type="text" placeholder="Email">
           <mat-hint>Email is required!</mat-hint>
         </mat-form-field>
       </p>
@@ -19,16 +19,21 @@
       <p class="mb-2">
         <mat-form-field appearance="outline">
           <mat-label>Password</mat-label>
-          <input type="password" matInput placeholder="Password">
+          <input formControlName="userPass" matInput type="password" placeholder="Password">
           <mat-hint>Password is required!</mat-hint>
         </mat-form-field>
       </p>
     </div>
-  </div>
+  </form>
 
   <div class="row">
     <div class="col-md-10 offset-md-1 mt-2 submitBtn">
-      <button mat-flat-button color="accent">Login</button>
+      <button 
+        [disabled]="userName.invalid || userPass.invalid"
+        (click)="loginUser()"
+        mat-flat-button color="accent">
+        Login
+      </button>
     </div>
   </div>
 </div>

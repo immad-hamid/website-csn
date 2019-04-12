@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModalModule } from '../shared/components/shared-modal/shared-modal.module';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,8 @@ import { SignupComponent } from './signup/signup.component';
     MatCardModule,
     RouterModule,
     SharedModalModule,
+    FormsModule,
+    ReactiveFormsModule,
     BsDropdownModule.forRoot()
   ],
   exports: [

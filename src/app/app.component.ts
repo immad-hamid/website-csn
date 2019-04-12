@@ -1,5 +1,5 @@
 import { SwUpdate } from '@angular/service-worker';
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { isPlatformServer } from '@angular/common';
 // import { WINDOW, LOCAL_STORAGE } from '@ng-toolkit/universal';
@@ -10,7 +10,7 @@ import { isPlatformServer } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'icsn-client';
 
   constructor(

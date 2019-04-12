@@ -9,8 +9,15 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layouts/layout.module';
 // common components module
 import { ComponentsModule } from './components/common.module';
+// modules
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 // services
 import { HttpService } from './services/http.service';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+import { IsAuthenticatedService } from './services/isAuthenticated.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guard/auth.guard';
+import { UsersService } from './services/users.service';
 
 @NgModule({
   declarations: [
@@ -22,11 +29,21 @@ import { HttpService } from './services/http.service';
     AppRoutingModule,
     // layouts
     LayoutModule,
-    // common components
-    ComponentsModule
+    // modules
+    ComponentsModule,
+    HttpClientModule
   ],
   providers: [
-    HttpService
+    HttpService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
+    IsAuthenticatedService,
+    AuthService,
+    AuthGuard,
+    UsersService
   ],
 })
 export class AppModule { }

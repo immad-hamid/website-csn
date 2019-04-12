@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  url: 'http://icsn-test-env.us-east-1.elasticbeanstalk.com/api'
+  // url: 'http://192.168.1.110/api',
+  url: 'http://icsn-test-env.us-east-1.elasticbeanstalk.com/api',
+  storage: localStorage
 };
 
 /*
