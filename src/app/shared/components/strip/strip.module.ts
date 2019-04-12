@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { StripComponent } from './strip.component';
 import { MaterialModule } from './../../../material/material.module';
 import { RouterModule } from '@angular/router';
+import { ExternalUrlModule } from '../../directives/external-url/external-url.module';
 // import { MaterialModule } from 'src/app/material/material.module';
 
 @NgModule({
@@ -10,7 +11,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    ExternalUrlModule
   ],
   exports: [StripComponent]
 })

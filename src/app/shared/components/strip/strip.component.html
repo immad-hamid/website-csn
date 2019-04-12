@@ -11,7 +11,30 @@
           <p class="text-white">{{ detail.text }}</p>
         </div>
         <div class="col-md-3">
-          <a class="btn-lg btn-block" [routerLink]="['/get-involved/become-a-member']" mat-raised-button routerLink="home">{{ detail.btn }}</a>
+
+          <span *ngIf="detail.url; then externalLinkTemp; else internalLinkTemp"></span>
+          <!-- external link -->
+          <ng-template #externalLinkTemp>
+            <a 
+              mat-raised-button
+              class="btn-lg btn-block"
+              target="_blank"
+              [href]="'https://www.justgiving.com/crowdfunding/icsn-runthismay?utm_term=m38pMX6Qw'"
+              appExternalUrl>
+              {{ detail.btn }}
+            </a> 
+          </ng-template>
+          <!-- internal link -->
+          <ng-template #internalLinkTemp>
+            <a 
+              class="btn-lg btn-block" 
+              [routerLink]="['/get-involved/become-a-member']" 
+              mat-raised-button 
+              routerLink="home">
+              {{ detail.btn }}
+            </a>
+          </ng-template>
+           
         </div>
       </div>
     </div>
