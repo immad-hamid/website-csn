@@ -9,7 +9,13 @@
         <p class="lead">{{ program?.description }}</p>
         <hr class="my-4">
         <p class="lead text-center">
-          <a mat-button color="accent" class="text-uppercase">Learn More</a>
+          <span *ngIf="program?.color; then routeTemp; otherTemp"></span>
+          <ng-template #routeTemp>
+            <a mat-button color="accent" class="text-uppercase" [routerLink]="[ program._id ]">Learn More</a>
+          </ng-template>
+          <ng-template #otherTemp>
+            <a mat-button color="accent" class="text-uppercase">Learn More</a>
+          </ng-template>
         </p>
       </div>
     </div>

@@ -1,17 +1,26 @@
 <app-sub-header [heading]="heading"></app-sub-header>
 
-<div class="col-md-8 offset-md-2 mb-4" *ngFor="let program of programsData">
+<ng-container *ngIf="(programsData$ | async)?.data as programs; else loading">
+  <div class="col-md-8 offset-md-2 mb-4" *ngFor="let program of programs">
+    <app-bg-with-content-banner 
+      [program]="program">
+    </app-bg-with-content-banner>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <app-shared-inline-loader></app-shared-inline-loader>
+</ng-template>
+
+<!-- <div class="col-md-8 offset-md-2 mb-4" *ngFor="let program of programsData">
   <app-bg-with-content-banner 
     [program]="program">
   </app-bg-with-content-banner>
 </div>
 
-<!-- <div class="col-md-8 offset-md-2 mb-4" *ngFor="let program of programs">
-  <app-bg-with-content-banner 
-    [program]="program">
-  </app-bg-with-content-banner>
-</div> -->
-
+<ng-template #loading>
+  <app-shared-inline-loader></app-shared-inline-loader>
+</ng-template> -->
 
 
 <div class="mb-1 pb-5"></div>

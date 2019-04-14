@@ -1,7 +1,30 @@
+<!-- <ng-container *ngIf="(homePageData$ | async)?.data as homeData; else loading">
+    <span *ngIf="homeData?.photos.length; then bannerTemp; else placeHolderTemp"></span>
+    <ng-template #bannerTemp>
+        <app-home-banner [images]="homeData.photos"></app-home-banner>
+    </ng-template>
+    <ng-template #placeHolderTemp>
+        <div style="height: 325px; background: #cecece" class="mb-3 pt-5">
+            <app-shared-inline-loader></app-shared-inline-loader>
+        </div>
+    </ng-template>
+
+    <app-info-content-area [content]="homeData.content"></app-info-content-area>
+</ng-container>
+
+<ng-template #loading>
+    <div class="col-sm-12 text-center">
+        <div style="height: 325px; background: #cecece" class="mb-3 pt-5">
+            <h2 class="m-0 p-0">ICSN</h2>
+            <app-shared-inline-loader></app-shared-inline-loader>
+        </div>
+
+        <app-shared-inline-loader></app-shared-inline-loader>
+    </div>
+</ng-template> -->
 
 <app-home-banner></app-home-banner>
- 
-<app-info-content-area></app-info-content-area>
+
 
 <app-home-recent-blog-posts></app-home-recent-blog-posts>
 

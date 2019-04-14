@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-info-content-area',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-content-area.component.scss']
 })
 export class InfoContentAreaComponent implements OnInit {
+  @Input() content;
 
   constructor() { }
 

@@ -9,6 +9,7 @@ import { EndPointsService } from 'src/app/services/end-points.service';
 export class HomeComponent implements OnInit {
   detail: { title: string; text: string; btn: string; };
   donateDetail: { title: string; text: string; btn: string; url: string };
+  homePageData$: any;
 
   constructor(
     private endPoints: EndPointsService
@@ -28,16 +29,18 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.endPoints
-      .getHomePageData()
-      .subscribe(
-        res => {
-          console.log(res);
-        },
-        err => {
-          console.log(err);
-        }
-      );
+    this.homePageData$ = this.endPoints.getHomePageData();
+
+    // this.endPoints
+    //   .getHomePageData()
+    //   .subscribe(
+    //     res => {
+    //       console.log(res);
+    //     },
+    //     err => {
+    //       console.log(err);
+    //     }
+    //   );
   }
 
 }

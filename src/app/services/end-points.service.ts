@@ -13,7 +13,7 @@ export class EndPointsService {
   }
 
   getHomePageData() {
-    return this.http.get(`/home`);
+    return this.http.get(`/assets/banner/all`);
   }
 
   getAboutPageData() {

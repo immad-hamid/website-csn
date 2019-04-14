@@ -13,6 +13,9 @@ import { SectionHeaderModule } from './../../shared/components/section-header/se
 import { StripModule } from './../../shared/components/strip/strip.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { LoadersModule } from 'src/app/shared/components/loaders/loaders.module';
+import { SafeModule } from 'src/app/shared/pipe/safe/safe.module';
+import { NguCarouselModule } from '@ngu/carousel';
 
 
 const routes: Routes = [
@@ -35,6 +38,9 @@ const routes: Routes = [
     SectionHeaderModule,
     MatSnackBarModule,
     MatCarouselModule,
+    LoadersModule,
+    SafeModule,
+    NguCarouselModule,
     RouterModule.forChild(routes)
   ],
   exports: [

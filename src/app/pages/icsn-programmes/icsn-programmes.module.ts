@@ -7,6 +7,7 @@ import { BgWithContentBannerModule } from './../../shared/components/bg-with-con
 import { IcsnProgrammesSingleComponent } from './icsn-programmes-single/icsn-programmes-single.component';
 import { SinglePostLayoutModule } from './../../shared/components/single-post-layout/single-post-layout.module';
 import { MatChipsModule } from '@angular/material/chips';
+import { LoadersModule } from 'src/app/shared/components/loaders/loaders.module';
 
 const routes: Routes = [
   { path: '', component: IcsnProgrammesComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
     SubHeaderModule,
     SinglePostLayoutModule,
     BgWithContentBannerModule,
+    LoadersModule,
     RouterModule.forChild(routes)
   ]
 })

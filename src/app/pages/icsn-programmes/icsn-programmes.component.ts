@@ -10,19 +10,22 @@ export class IcsnProgrammesComponent implements OnInit {
   heading = 'ICSN Programmes';
   programs: { heading: string; content: string; img: string }[];
   programsData: any;
+  programsData$: any;
 
   constructor(private endPointsService: EndPointsService) { }
 
   ngOnInit() {
-    this.endPointsService
-      .getPrograms()
-      .subscribe(
-        (res: any) => {
-          this.programsData = res.data;
-          console.log(this.programsData)
-        },
-        err => console.log(err)
-      );
+    this.programsData$ = this.endPointsService.getPrograms();
+
+    // this.endPointsService
+    //   .getPrograms()
+    //   .subscribe(
+    //     (res: any) => {
+    //       this.programsData = res.data;
+    //       console.log(this.programsData)
+    //     },
+    //     err => console.log(err)
+    //   );
 
     this.programs = [
       {

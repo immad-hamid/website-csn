@@ -8,6 +8,7 @@ import { MaterialModule } from './../../material/material.module';
 import { CardsModule } from './../../shared/components/cards/cards.module';
 // import { SubHeaderModule } from 'src/app/shared/components/sub-header/sub-header.module';
 import { SubHeaderModule } from './../../shared/components/sub-header/sub-header.module';
+import { LoadersModule } from 'src/app/shared/components/loaders/loaders.module';
 
 const routes: Routes = [
   { path: '', component: AboutUsComponent }
@@ -22,6 +23,7 @@ const routes: Routes = [
     CardsModule,
     SubHeaderModule,
     MaterialModule,
+    LoadersModule,
     RouterModule.forChild(routes)
   ]
 })
