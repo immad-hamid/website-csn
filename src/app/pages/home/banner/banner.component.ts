@@ -13,11 +13,12 @@ export class BannerComponent implements OnInit, AfterViewChecked {
   @Input() images;
   loading = true;
 
-  imgags = [
-    'assets/banner/banner-one.jpg',
-    'assets/banner/banner-two.jpg',
-    'https://s3.amazonaws.com/icsn-prod-assets/images/banner-one.png'
-  ];
+  imgData: any = [];
+  // imgData = [
+  //   'assets/banner/banner-one.jpg',
+  //   'assets/banner/banner-two.jpg',
+  //   'https://s3.amazonaws.com/icsn-prod-assets/images/banner-one.png'
+  // ];
   public carouselTileConfig: NguCarouselConfig = {
     grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
     speed: 250,
@@ -39,7 +40,13 @@ export class BannerComponent implements OnInit, AfterViewChecked {
     private cdRef: ChangeDetectorRef
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    if (this.images.length) {
+      this.images.forEach(image => {
+        this.imgData.push(image.link);
+      });
+    }
+  }
 
   ngAfterViewChecked() {
     this.cdRef.detectChanges();

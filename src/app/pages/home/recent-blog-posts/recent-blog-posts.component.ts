@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecentBlogPostsComponent implements OnInit {
   posts: {
-    id: number; avatar: boolean; sub: string; img: string; heading: string;
+    id: string; avatar: boolean; sub: string; img: string; heading: string;
     // tslint:disable-next-line:max-line-length
     content: string;
   }[];
@@ -17,7 +17,7 @@ export class RecentBlogPostsComponent implements OnInit {
   ngOnInit() {
     this.posts = [
       {
-        id: 1,
+        id: '../ghm',
         avatar: true,
         sub: 'ICSN',
         img: 'assets/img/blog3.png',
@@ -26,7 +26,7 @@ export class RecentBlogPostsComponent implements OnInit {
         content: 'Every second Sunday of the month we hold a themed ‘General House Meeting’ that will appeal to our members and those looking to learn more about the Igbo culture. To find out the theme for our next GHM check out the events page'
       },
       {
-        id: 2,
+        id: '../icsn-programmes',
         avatar: true,
         sub: 'ICSN',
         img: 'assets/img/blog1.png',
@@ -35,7 +35,7 @@ export class RecentBlogPostsComponent implements OnInit {
         content: 'We host regular sessions of Language, cooking and dance schools through out the year all hosted in a fun and supportive environment'
       },
       {
-        id: 3,
+        id: '../youth-development',
         avatar: true,
         sub: 'ICSN',
         img: 'assets/img/blog2.png',

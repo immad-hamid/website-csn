@@ -25,8 +25,32 @@ const routes: Routes = [
         loadChildren: './pages/team/team.module#TeamModule'
       },
       {
+        path: 'welfare-and-support',
+        loadChildren: './pages/welfare-and-support/welfare-and-support.module#WelfareAndSupportModule'
+      },
+      {
+        path: 'our-mission-statement',
+        loadChildren: './pages/our-mission/our-mission.module#OurMissionModule'
+      },
+      {
+        path: 'our-history',
+        loadChildren: './pages/our-history/our-history.module#OurHistoryModule'
+      },
+      {
+        path: 'ghm',
+        loadChildren: './pages/ghm/ghm.module#GhmModule'
+      },
+      {
+        path: 'youth-development',
+        loadChildren: './pages/youth-development/youth-development.module#YouthDevelopmentModule'
+      },
+      {
         path: 'icsn-programmes',
         loadChildren: './pages/icsn-programmes/icsn-programmes.module#IcsnProgrammesModule'
+      },
+      {
+        path: 'mentoring-program',
+        loadChildren: './pages/mentoring-program/mentoring-program.module#MentoringProgramModule'
       },
       {
         path: 'events',

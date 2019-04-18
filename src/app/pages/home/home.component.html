@@ -1,4 +1,9 @@
-<!-- <ng-container *ngIf="(homePageData$ | async)?.data as homeData; else loading">
+<!-- <app-shared-full-page-loader
+    [hidden]="loading">
+</app-shared-full-page-loader> -->
+
+
+<ng-container *ngIf="(homePageData$ | async)?.data as homeData; else loading">
     <span *ngIf="homeData?.photos.length; then bannerTemp; else placeHolderTemp"></span>
     <ng-template #bannerTemp>
         <app-home-banner [images]="homeData.photos"></app-home-banner>
@@ -13,20 +18,33 @@
 </ng-container>
 
 <ng-template #loading>
-    <div class="col-sm-12 text-center">
-        <div style="height: 325px; background: #cecece" class="mb-3 pt-5">
-            <h2 class="m-0 p-0">ICSN</h2>
+    <div class="text-center">
+        <div style="height: 325px;" class="bg-gradient mb-3 pt-5">
+            <h2 class="m-0 p-0">
+                <img alt="ICSN" class="mw-100" src="assets/img/logo-black-text.png" style="width: 94px;">
+            </h2>
             <app-shared-inline-loader></app-shared-inline-loader>
         </div>
 
         <app-shared-inline-loader></app-shared-inline-loader>
     </div>
-</ng-template> -->
-
-<app-home-banner></app-home-banner>
-
+</ng-template>
 
 <app-home-recent-blog-posts></app-home-recent-blog-posts>
+
+<mat-divider></mat-divider>
+
+<section class="sec-space-t">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let program of programs">
+            <app-bg-with-content-banner 
+                [program]="program">
+            </app-bg-with-content-banner>
+            </div>
+        </div>
+    </div>
+</section>
 
 <app-shared-strip
     [detail]="detail">

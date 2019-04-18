@@ -6,6 +6,7 @@ import { SubHeaderModule } from './../../shared/components/sub-header/sub-header
 import { CardsModule } from './../../shared/components/cards/cards.module';
 import { MatChipsModule } from '@angular/material/chips';
 import { MaterialModule } from './../../material/material.module';
+import { LoadersModule } from 'src/app/shared/components/loaders/loaders.module';
 
 const routes: Routes = [
   { path: '', component: NewsAndUpdatesComponent }
@@ -21,6 +22,7 @@ const routes: Routes = [
     CardsModule,
     MatChipsModule,
     MaterialModule,
+    LoadersModule,
     RouterModule.forChild(routes)
   ]
 })

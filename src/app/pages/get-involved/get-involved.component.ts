@@ -19,7 +19,7 @@ export class GetInvolvedComponent implements OnInit {
       },
       {
         heading: 'Become a Sponser',
-        anchor: 'become-a-sponser'
+        anchor: 'sponsorship'
       },
       {
         heading: 'Fundraising',

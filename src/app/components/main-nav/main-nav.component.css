@@ -40,6 +40,7 @@ figure::focus {
 :host >>> .content {
   height: -moz-available;          /* WebKit-based browsers will ignore this. */
   height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  height: auto !important;
 }
 
 @media (max-width: 600px) {

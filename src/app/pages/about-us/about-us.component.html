@@ -5,26 +5,49 @@
 </div> -->
 <app-sub-header [heading]="heading"></app-sub-header>
 
-<section>
+<section class="sec-space">
   <div class="container">
     <div class="row">
 
-      <div class="col-md-12" *ngIf="(data$ | async)?.data as data; else loading">
-        <div [innerHTML]="data.content"></div>
+      <div class="col-md-6" *ngIf="(data$ | async)?.data as data; else loading">
+        <div [innerHTML]="data.content | safe: 'html'"></div>
       </div>
 
       <ng-template #loading>
-        <div class="col-sm-12 text-center">
+        <div class="col-md-6 text-center">
           <app-shared-inline-loader></app-shared-inline-loader>
         </div>
       </ng-template>
+
+      <div class="col-md-5 offset-md-1">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/W2z3YjyPnrk?rel=0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="mt-3 mb-3"></div>
+
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dCWe3nmFk18?rel=0" allowfullscreen></iframe>
+        </div>
+      </div>
       
     </div>
   </div>
 </section>
 
+<section class="sec-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let program of programs">
+        <app-bg-with-content-banner 
+          [program]="program">
+        </app-bg-with-content-banner>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section class="sec-space" id="banner">
+<section class="sec-space-b" id="banner">
   <div class="container">
     <div class="row">
 
@@ -32,7 +55,7 @@
         <div class="card-group row">
           
           <ng-container *ngIf="(data$ | async)?.data?.programs as programs; else loading">
-            <div class="col-md-4" *ngFor="let program of programs">
+            <div class="col-md-4 mb-4" *ngFor="let program of programs">
               <app-shared-cards-without-image
                 [data]="program">
               </app-shared-cards-without-image>

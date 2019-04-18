@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit {
   detail: { title: string; text: string; btn: string; };
   donateDetail: { title: string; text: string; btn: string; url: string };
   homePageData$: any;
+  loading: boolean;
+  programs: { heading: string; anchor: string; }[];
 
   constructor(
     private endPoints: EndPointsService
@@ -30,6 +32,26 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.homePageData$ = this.endPoints.getHomePageData();
+
+    this.programs = [
+      {
+        heading: 'Our<br> History',
+        anchor: '../our-history'
+      },
+      {
+        heading: 'Mission<br> Statement',
+        anchor: '../our-mission-statement'
+      },
+      {
+        heading: 'Welfare<br> & Support',
+        anchor: '../welfare-and-support'
+      }
+    ];
+
+    setTimeout(() => {
+      this.loading = true;
+      console.log(this.loading);
+    }, 2000);
 
     // this.endPoints
     //   .getHomePageData()

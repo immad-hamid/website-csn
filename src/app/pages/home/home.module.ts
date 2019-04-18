@@ -16,7 +16,8 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { LoadersModule } from 'src/app/shared/components/loaders/loaders.module';
 import { SafeModule } from 'src/app/shared/pipe/safe/safe.module';
 import { NguCarouselModule } from '@ngu/carousel';
-
+import { BgWithContentBannerModule } from 'src/app/shared/components/bg-with-content-banner/bg-with-content-banner.module';
+import { MatDividerModule } from '@angular/material/divider';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }
@@ -37,10 +38,12 @@ const routes: Routes = [
     StripModule,
     SectionHeaderModule,
     MatSnackBarModule,
+    MatDividerModule,
     MatCarouselModule,
     LoadersModule,
     SafeModule,
     NguCarouselModule,
+    BgWithContentBannerModule,
     RouterModule.forChild(routes)
   ],
   exports: [

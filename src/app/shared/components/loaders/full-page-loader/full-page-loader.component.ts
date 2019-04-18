@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-full-page-loader',
+  selector: 'app-shared-full-page-loader',
   templateUrl: './full-page-loader.component.html',
   styleUrls: ['./full-page-loader.component.scss']
 })

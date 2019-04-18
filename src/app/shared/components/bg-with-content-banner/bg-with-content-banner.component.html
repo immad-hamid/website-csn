@@ -24,7 +24,8 @@
 <ng-template #withoutImgTemp>
   <div class="jumbotron text-center bg-gradient">
     <div class="content-area">
-        <h2 class="text-white">{{ program?.heading }}</h2>
+        <h4 class="text-white" [innerHTML]="program?.heading | safe: 'html'"></h4>
+        <!-- <h4 class="text-white">{{ program?.heading }}</h4> -->
         <hr class="my-4">
         <p class="lead text-center">
           <a mat-flat-button color="accent" [routerLink]="[ program.anchor ]" class="text-uppercase">Learn More</a>

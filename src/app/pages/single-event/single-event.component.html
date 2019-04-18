@@ -1,1 +1,16 @@
 <app-single-post-layout [data]="event"></app-single-post-layout>
+
+<div *ngIf="!event">
+    <div class="jumbotron text-center bg-gradient">
+    <app-shared-inline-loader></app-shared-inline-loader>
+    </div>
+    <section class="sec-space-b">
+        <div class="container box-content mb-5" style="margin-top: -65px;">
+            <div class="row">
+            <div class="col-md-12">
+                <app-shared-inline-loader></app-shared-inline-loader>
+            </div>
+            </div>
+        </div>
+    </section>
+</div>

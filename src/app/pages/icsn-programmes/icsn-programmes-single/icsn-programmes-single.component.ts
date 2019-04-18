@@ -23,6 +23,7 @@ export class IcsnProgrammesSingleComponent implements OnInit {
       .getProgram(param)
       .subscribe(
         (res: any) => {
+          console.log(res.data);
           this.programData = res.data;
         },
         err => console.log(err)

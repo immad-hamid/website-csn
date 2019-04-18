@@ -7,7 +7,7 @@ import { EndPointsService } from 'src/app/services/end-points.service';
   styleUrls: ['./icsn-programmes.component.scss']
 })
 export class IcsnProgrammesComponent implements OnInit {
-  heading = 'ICSN Programmes';
+  heading = 'Programmes';
   programs: { heading: string; content: string; img: string }[];
   programsData: any;
   programsData$: any;

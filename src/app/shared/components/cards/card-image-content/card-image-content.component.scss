@@ -4,6 +4,12 @@ a {
     }
 }
 
+mat-card-content {
+    text-overflow: ellipsis;
+    height: 110px;
+    overflow: hidden;
+}
+
 .header-image {
     background-image: url('./../../../../../assets/img/logo-black-text.png');
     background-size: cover;

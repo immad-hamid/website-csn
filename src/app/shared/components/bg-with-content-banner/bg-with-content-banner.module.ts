@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BgWithContentBannerComponent } from './bg-with-content-banner.component';
 import { MaterialModule } from './../../../material/material.module';
 import { RouterModule } from '@angular/router';
+import { SafeModule } from '../../pipe/safe/safe.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    SafeModule
   ],
   exports: [
     BgWithContentBannerComponent

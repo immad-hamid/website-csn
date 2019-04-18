@@ -10,32 +10,26 @@ export class AboutUsComponent implements OnInit {
   heading = 'About Us';
   thingsWeDo: { heading: string; content: string; anchor: string, color: string }[];
   data$: any;
+  programs: { heading: string; anchor: string; }[];
 
   constructor(private endPointsService: EndPointsService) { }
 
   ngOnInit() {
     this.data$ = this.endPointsService.getAboutPageData();
-
     this.data$.subscribe(res => console.log(res));
 
-    this.thingsWeDo = [
+    this.programs = [
       {
-        heading: 'Language School',
-        content: 'Receive top-notch tutelage from our external partners over the course of a few weeks.',
-        anchor: 'language-school',
-        color: '#bd1522'
+        heading: 'Our<br> History',
+        anchor: '../our-history'
       },
       {
-        heading: 'Cooking School',
-        content: 'Receive top-notch tutelage from our external partners over the course of a few weeks.',
-        anchor: 'cooking-school',
-        color: '#f29200'
+        heading: 'Mission<br> Statement',
+        anchor: '../our-mission-statement'
       },
       {
-        heading: 'Dance School',
-        content: 'Receive top-notch tutelage from our external partners over the course of a few weeks.',
-        anchor: 'dance-school',
-        color: '#2b7041'
+        heading: 'Welfare<br> & Support',
+        anchor: '../welfare-and-support'
       }
     ];
   }

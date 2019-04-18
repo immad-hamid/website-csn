@@ -9,19 +9,19 @@ const routes: Routes = [
   { path: '', component: GetInvolvedComponent },
   {
     path: 'become-a-member',
-    loadChildren: '../sponsorship/sponsorship.module#SponsorshipModule'
+    loadChildren: '../become-a-member/become-a-member.module#BecomeAMemberModule'
   },
   {
-    path: 'become-a-sponser',
+    path: 'sponsorship',
     loadChildren: '../sponsorship/sponsorship.module#SponsorshipModule'
   },
   {
     path: 'fundraising',
-    loadChildren: '../sponsorship/sponsorship.module#SponsorshipModule'
+    loadChildren: '../become-a-member/become-a-member.module#BecomeAMemberModule'
   },
   {
     path: 'volunteering',
-    loadChildren: '../sponsorship/sponsorship.module#SponsorshipModule'
+    loadChildren: '../become-a-member/become-a-member.module#BecomeAMemberModule'
   }
 ];
 

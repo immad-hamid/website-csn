@@ -1,8 +1,24 @@
-<div *ngIf="data && data.banner" class="jumbotron" [ngStyle]="{'background' : 'url('+ data.banner.link +')'}">
+<span *ngIf="data && data.banner; then imageTemp; else otherTemp"></span>
 
-</div>
+<ng-template #imageTemp>
+  <div class="jumbotron" [ngStyle]="{'background' : 'url('+ data.banner.link +')'}"></div>
+</ng-template>
 
-<section class="sec-space-b">
+<ng-template #otherTemp>
+  <span *ngIf="data; then bannerTemp; else nothingTemp"></span>
+
+  <ng-template #bannerTemp>
+    <div class="jumbotron text-center bg-gradient">
+      <h4 class="text-white">{{data ? data.title : ''}}</h4>
+      <p class="lead text-white">{{data ? data.description : ''}}</p>
+    </div>
+  </ng-template>
+  <ng-template #nothingTemp></ng-template>
+  
+</ng-template>
+
+
+<section *ngIf="data" class="sec-space-b">
   <div class="container box-content mb-5" style="margin-top: -65px;">
     <div class="row">
       <div class="col-md-12">
@@ -12,7 +28,7 @@
         </mat-chip-list>
         <p class="lead">{{data ? data.description : ''}}</p>
         <hr class="my-4">
-        <div class="content" [innerHTML]="data ? data.html : ''"></div>
+        <div class="content" [innerHTML]="data ? (data.html | safe: 'html') : ''"></div>
       </div>
     </div>
   </div>
