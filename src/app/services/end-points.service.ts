@@ -43,4 +43,8 @@ export class EndPointsService {
   getEvent(eventId) {
     return this.http.get(`/events/${eventId}`);
   }
+
+  addNewMember(body) {
+    return this.http.post(`https://us20.api.mailchimp.com/schema/3.0/Lists/Members`, body);
+  }
 }

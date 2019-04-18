@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  BsModalRef
-} from 'ngx-bootstrap';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 import { environment } from 'src/environments/environment';
 import { MatSnackBar } from '@angular/material';
+import { SignupComponent } from '../signup/signup.component';
 
 @Component({
   selector: 'app-login',
@@ -14,16 +13,18 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  bsModalRef: BsModalRef;
   loginForm: FormGroup;
   get userName() { return this.loginForm.get('userName'); }
   get userPass() { return this.loginForm.get('userPass'); }
 
   constructor(
     // tslint:disable-next-line:no-shadowed-variable
-    private BsModalRef: BsModalRef,
+    // private BsModalRef: BsModalRef,
     private router: Router,
     private userService: UsersService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private modalService: BsModalService
   ) { }
 
   ngOnInit(): void {
@@ -100,8 +101,29 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  openSignupComponent() {
+    this.bsModalRef.hide();
+
+    setTimeout(() => {
+      const config = {
+        // configuration options
+        class: 'modal-md',
+        animated: true,
+        backdrop: 'static', // true|false|'static',
+        ignoreBackdropClick: true,
+        keyboard: false
+      };
+
+      this.bsModalRef = this.modalService.show(
+        SignupComponent,
+        Object.assign(config)
+      );
+      this.bsModalRef.content.closeBtnName = 'Close';
+    }, 0);
+  }
+
   close() {
-    this.BsModalRef.hide();
+    this.bsModalRef.hide();
   }
 
 }

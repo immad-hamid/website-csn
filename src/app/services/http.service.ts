@@ -54,16 +54,16 @@ export class HttpService {
     }
   }
 
-  // post(url, data) {
-  //   const headers = this.createAuthorizationHeader(new HttpHeaders());
-  //   return this.http.post(environment.url + url, data, {
-  //     headers
-  //   })
-  //     .pipe(
-  //       map(res => res),
-  //       catchError(err => Observable.throw(err))
-  //     );
-  // }
+  postMailChimp(url, data) {
+    const headers = this.createAuthorizationHeader(new HttpHeaders());
+    return this.http.post(environment.url + url, data, {
+      headers
+    })
+      .pipe(
+        map(res => res),
+        catchError(err => Observable.throw(err))
+      );
+  }
 
   // get(url) {
   //   const headers = this.createAuthorizationHeader(new HttpHeaders());

@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   // url: 'http://localhost:3000/api',
   url: 'http://icsn-test-env.us-east-1.elasticbeanstalk.com/api',
-  storage: localStorage
+  storage: localStorage,
+  mailChimpKey: '29e7e1a1108f8d426c90cd4e64947d37-us20'
 };
 
 /*
