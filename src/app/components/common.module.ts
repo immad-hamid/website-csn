@@ -5,7 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MaterialModule } from '../material/material.module';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatSelectModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { TopToolbarComponent } from './top-toolbar/top-toolbar.component';
@@ -36,6 +36,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatSelectModule,
     RouterModule,
     SharedModalModule,
     FormsModule,

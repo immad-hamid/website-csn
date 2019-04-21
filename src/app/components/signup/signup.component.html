@@ -6,55 +6,141 @@
 </div>
 
 <div class="modal-body">
-  <div class="row">
+  <form [formGroup]="signupForm" class="row">
     <div class="col-md-10 offset-md-1">
 
       <mat-hint class="small">Sign up to receive regular email updates from us with all of our latest news, events and ways to get involved.</mat-hint>
       
-      <p class="mb-2">
+      <p class="mb-0">
         <mat-form-field appearance="outline">
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Email">
-          <mat-hint>Name is required!</mat-hint>
+          <mat-label>First Name</mat-label>
+          <input 
+            formControlName="fname" 
+            matInput 
+            placeholder="First Name">
+          <mat-hint>
+            <span *ngIf="(fname?.dirty || fname?.touched) && fname?.errors; then errorfnameTemp; else normfnameTemp"></span>
+            <ng-template #errorfnameTemp><span class="text-danger">First Name is Invalid. Should be atleast 3 characters long.</span></ng-template>
+            <ng-template #normfnameTemp>First Name is required!</ng-template>
+          </mat-hint>
         </mat-form-field>
       </p>
       
-      <p class="mb-2">
+      <p class="mb-0">
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input 
+            formControlName="lname" 
+            matInput 
+            placeholder="Last Name">
+          <mat-hint>
+            <span *ngIf="(lname?.dirty || lname?.touched) && lname?.errors; then errorlnameTemp; else normlnameTemp"></span>
+            <ng-template #errorlnameTemp><span class="text-danger">Last Name is Invalid. Should be atleast 3 characters long.</span></ng-template>
+            <ng-template #normlnameTemp>Last Name is required!</ng-template>
+          </mat-hint>
+        </mat-form-field>
+      </p>
+      
+      <p class="mb-0">
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Email">
-          <mat-hint>Email is required!</mat-hint>
+          <input 
+            formControlName="email" 
+            matInput 
+            placeholder="Email">
+          <mat-hint>
+            <span *ngIf="email?.dirty && email?.errors; then errorEmailTemp; else normEmailTemp"></span>
+            <ng-template #errorEmailTemp><span class="text-danger">Invalid Email.</span></ng-template>
+            <ng-template #normEmailTemp>Email is required!</ng-template>
+          </mat-hint>
+        </mat-form-field>
+      </p>
+        
+      <p class="mb-0">
+        <mat-form-field appearance="outline">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender" >
+            <mat-option *ngFor="let gender of genders" [value]="gender.value">
+              {{gender.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-hint>
+            <span *ngIf="gender?.dirty && gender?.errors; then errorGenTemp; else normGenTemp"></span>
+            <ng-template #errorGenTemp><span class="text-danger">Select atleast one option.</span></ng-template>
+            <ng-template #normGenTemp>Gender is required!</ng-template>
+          </mat-hint>
         </mat-form-field>
       </p>
       
-      <p class="mb-2">
+      <p class="mb-0">
         <mat-form-field appearance="outline">
           <mat-label>Password</mat-label>
-          <input type="password" matInput placeholder="Password">
-          <mat-hint>Password is required!</mat-hint>
+          <input 
+            formControlName="password" 
+            type="password" 
+            matInput 
+            placeholder="Password">
+          <mat-hint>
+            <span *ngIf="password?.dirty && repassword?.dirty && password?.value != repassword?.value; then errorPassTemp; else normPassTemp"></span>
+            <ng-template #errorPassTemp><span class="text-danger">Password do not match</span></ng-template>
+            <ng-template #normPassTemp>
+              <span *ngIf="password?.dirty && password?.errors; then errorPassTemp; else normPassTemp"></span>
+              <ng-template #errorPassTemp><span class="text-danger">Password length should be atleast 5.</span></ng-template>
+              <ng-template #normPassTemp>Password is required!</ng-template>
+            </ng-template>
+          </mat-hint>
         </mat-form-field>
       </p>
       
-      <p class="mb-2">
+      <p class="mb-0">
         <mat-form-field appearance="outline">
           <mat-label>Confirm Password</mat-label>
-          <input type="password" matInput placeholder="Password">
-          <mat-hint>Password is required!</mat-hint>
+          <input 
+            formControlName="repassword" 
+            type="password" 
+            matInput 
+            placeholder="Retype Password">
+          <mat-hint>
+            <span *ngIf="password?.dirty && repassword?.dirty && password?.value != repassword?.value; then errorTemp; else normTemp"></span>
+            <ng-template #errorTemp><span class="text-danger">Password do not match</span></ng-template>
+            <ng-template #normTemp>
+              <span *ngIf="repassword?.dirty && repassword?.errors; then errorRepassTemp; else normRepassTemp"></span>
+              <ng-template #errorRepassTemp><span class="text-danger">Password length should be atleast 5.</span></ng-template>
+              <ng-template #normRepassTemp>Password is required!</ng-template>
+            </ng-template>
+          </mat-hint>
         </mat-form-field>
       </p>
 
-      <p class="mb-2">
-        <mat-checkbox [checked]="modelClass" class="mat-hint small">I am of Igbo Ancestory?</mat-checkbox>
-        <mat-checkbox [checked]="modelClass" class="mat-hint small">I agree to ICSN storing my information and using it solely for the purpose of contacting me about ICSN related activities. Read more</mat-checkbox>
-        <mat-checkbox [checked]="modelClass" class="mat-hint small">I am happy to also be contacted by Igbo businesses?</mat-checkbox>
+      <p class="mb-0">
+        <mat-checkbox 
+          formControlName="ancestry" 
+          [checked]="ancestry?.value" 
+          class="mat-hint small">
+          I am of Igbo Ancestory?
+        </mat-checkbox>
+        <mat-checkbox 
+          formControlName="agree" 
+          [checked]="agree?.value" 
+          class="mat-hint small">
+          I agree to ICSN storing my information and using it solely for the purpose of contacting me about ICSN related activities. Read more
+        </mat-checkbox>
+        <mat-checkbox 
+          formControlName="contactForBusiness" 
+          [checked]="contactForBusiness?.value" 
+          class="mat-hint small">
+          I am happy to also be contacted by Igbo businesses?
+        </mat-checkbox>
       </p>
       
     </div>
-  </div>
+  </form>
 
   <div class="row">
     <div class="col-md-10 offset-md-1 mt-2 submitBtn">
-      <button mat-flat-button color="accent">Sign Up</button>
+      <button 
+        [disabled]="signupForm.invalid || password?.value != repassword?.value || disBtn || !agree.value" 
+        (click)="registerUser()" mat-flat-button color="accent">Sign Up</button>
     </div>
   </div>
 </div>

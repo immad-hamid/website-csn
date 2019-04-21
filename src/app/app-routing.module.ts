@@ -87,6 +87,10 @@ const routes: Routes = [
       {
         path: 'edit-profile',
         loadChildren: './pages/edit-profile/edit-profile.module#EditProfileModule'
+      },
+      {
+        path: 'privacy-terms',
+        loadChildren: './pages/privacy-and-terms/privacy-and-terms.module#PrivacyAndTermsModule'
       }
     ]
   },

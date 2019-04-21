@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     // tslint:disable-next-line:no-shadowed-variable
-    // private BsModalRef: BsModalRef,
+    private BsModalRef: BsModalRef,
     private router: Router,
     private userService: UsersService,
     private snackBar: MatSnackBar,
@@ -54,11 +54,12 @@ export class LoginComponent implements OnInit {
 
         await this.userService.loginUser(data).subscribe(
           (res: any) => {
+            debugger;
             if (res.success) {
               this.loginForm.reset();
               environment.storage.setItem('token', res.data.token);
+              this.close();
               this.openSnackBar(res.message);
-              this.router.navigate(['/']);
             } else {
               this.openSnackBar(res.message);
               this.enableInputs();
@@ -102,7 +103,7 @@ export class LoginComponent implements OnInit {
   }
 
   openSignupComponent() {
-    this.bsModalRef.hide();
+    this.BsModalRef.hide();
 
     setTimeout(() => {
       const config = {
@@ -123,7 +124,7 @@ export class LoginComponent implements OnInit {
   }
 
   close() {
-    this.bsModalRef.hide();
+    this.BsModalRef.hide();
   }
 
 }

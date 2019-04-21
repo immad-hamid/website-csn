@@ -21,13 +21,13 @@ export class BannerComponent implements OnInit, AfterViewChecked {
   // ];
   public carouselTileConfig: NguCarouselConfig = {
     grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
-    speed: 250,
+    speed: 850,
     point: {
       visible: true
     },
     touch: true,
     loop: true,
-    interval: { timing: 1500 },
+    interval: { timing: 3500 },
     animation: 'lazy'
   };
 

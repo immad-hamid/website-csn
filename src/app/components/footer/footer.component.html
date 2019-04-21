@@ -1,7 +1,7 @@
 <footer>
     <div class="container pt-5">
 
-      <div class="row">
+      <div class="row v-align">
 
         <div class="col-md-8 col-sm-12">
           
@@ -77,6 +77,15 @@
                 </li>
               </ul>
             </div>
+
+            <div class="col-md-12">
+              <mat-divider></mat-divider>
+            </div>
+            <div class="col-md-12">
+              <div class="py-4 d-flex justify-content-center align-items-center">
+                <a mat-button color="primary" [routerLink]="['/privacy-terms']" class="mr-4">Privacy & terms</a>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -86,41 +95,76 @@
 
             <div class="col-sm-12">
               <p class="mat-hint small text-white">Sign up to receive regular email updates from us with all of our latest news, events and ways to get involved.</p>
-              <form>
+              <form [formGroup]="signupForm">
                 <div class="form-group">
                   <label for="name" style="display: none"></label>
-                  <input type="name" placeholder="Name" class="form-control" id="name">
+                  <input formControlName="fname" type="name" placeholder="First Name" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="name" style="display: none"></label>
+                  <input formControlName="lname" type="name" placeholder="Last Name" class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="email" style="display: none"></label>
-                  <input type="email" placeholder="Email address" class="form-control" id="email">
+                  <input formControlName="email" type="email" placeholder="Email address" class="form-control">
+                </div>
+                <div class="form-group">
+                  <select name="gender" formControlName="gender" class="form-control">
+                    <option value="null" hidden>Select your gender</option>
+                    <option *ngFor="let gender of genders" [value]="gender.value">
+                      {{gender.viewValue}}
+                    </option>
+                  </select>
                 </div>
                 <div class="form-group">
                   <label for="password" style="display: none"></label>
-                  <input type="password" placeholder="Password" class="form-control" id="pwd">
+                  <input formControlName="password" type="password" placeholder="Password" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="password" style="display: none"></label>
+                  <input formControlName="repassword" type="password" placeholder="Password" class="form-control">
                 </div>
 
                 <p class="mb-2">
-                  <mat-checkbox [checked]="modelClass" class="mat-hint small text-white">I am of Igbo Ancestory?</mat-checkbox>
-                  <mat-checkbox [checked]="modelClass" class="mat-hint small text-white">I agree to ICSN storing my information and using it solely for the purpose of contacting me about ICSN related activities. Read more</mat-checkbox>
-                  <mat-checkbox [checked]="modelClass" class="mat-hint small text-white">I am happy to also be contacted by Igbo businesses?</mat-checkbox>
+                  <mat-checkbox 
+                    formControlName="ancestry" 
+                    [checked]="ancestry?.value" 
+                    class="mat-hint small text-white">
+                    I am of Igbo Ancestory?
+                  </mat-checkbox>
+                  <mat-checkbox 
+                    formControlName="agree" 
+                    [checked]="agree?.value" 
+                    class="mat-hint small text-white">
+                    I agree to ICSN storing my information and using it solely for the purpose of contacting me about ICSN related activities. Read more
+                  </mat-checkbox>
+                  <mat-checkbox 
+                    formControlName="contactForBusiness" 
+                    [checked]="contactForBusiness?.value" 
+                    class="mat-hint small text-white">
+                    I am happy to also be contacted by Igbo businesses?
+                  </mat-checkbox>
                 </p>
 
-                <button mat-raised-button class="btn-block" [disabled]="true" (click)="register()">Register</button>
+                <button mat-raised-button color="accent" class="btn-block" 
+                  [disabled]="signupForm.invalid || password?.value != repassword?.value || disBtn" 
+                  (click)="registerUser()">
+                  Register
+                </button>
               </form>
             </div>
 
           </div>
         </div>
 
-        <div class="col-md-12">
+        <!-- <div class="col-md-12">
           <mat-divider></mat-divider>
         </div>
         <div class="col-md-12">
           <div class="py-4 d-flex justify-content-center align-items-center">
             <a mat-button color="primary" routerLink="home" class="mr-4">Privacy & terms</a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </footer>

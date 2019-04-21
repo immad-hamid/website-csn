@@ -24,7 +24,7 @@ export class RecentEventsComponent implements OnInit {
     this.detail = {
       title: 'Events',
       // tslint:disable-next-line:max-line-length
-      content: 'Our GHM\'s We hoanguage, cooking and dance schools through out the year all hosted in a fun and supportive environmentOur GHM\''
+      content: 'We have a mixture of members so we actively try to put on different events and activities monthly that appeal to our members. We have a mixture of Monthly Events (such as our Monthly General House Meeting aka GHM’s, Monthly Book Club), Random Mini Socials (such as bowling, football, film club, member-only dinners), and Major Social Events (such as Summer BBQ’s, Reunion Dinners, Iri-Ji Festivals, Christmas Party, Valentine’s Ball) which are all great events aimed at making it easier to mix and network with like-minded Igbo people.'
     };
 
     // this.events = [

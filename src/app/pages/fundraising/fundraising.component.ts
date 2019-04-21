@@ -1,14 +1,13 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EndPointsService } from 'src/app/services/end-points.service';
-declare let paypal: any;
 
 @Component({
-  selector: 'app-sponsorship',
-  templateUrl: './sponsorship.component.html',
-  styleUrls: ['./sponsorship.component.scss']
+  selector: 'app-fundraising',
+  templateUrl: './fundraising.component.html',
+  styleUrls: ['./fundraising.component.scss']
 })
-export class SponsorshipComponent implements OnInit {
-  heading = 'Sponsorship';
+export class FundraisingComponent implements OnInit {
+  heading = 'Udara Nigeria Outreach Programme';
   programData: any;
 
   constructor(
@@ -21,9 +20,10 @@ export class SponsorshipComponent implements OnInit {
       .subscribe(
         (res: any) => {
           this.programData = res.data;
-          this.programData.title = 'Sponsorship';
+          this.programData.title = 'Udara Nigeria Outreach Programme';
         },
         err => console.log(err)
       );
   }
+
 }

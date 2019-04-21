@@ -28,7 +28,7 @@
         </mat-chip-list>
         <p class="lead">{{data ? data.description : ''}}</p>
         <hr class="my-4">
-        <div class="content" [innerHTML]="data ? (data.html | safe: 'html') : ''"></div>
+        <div class="content" [innerHTML]="data ? (data.html | filterHtml | safe: 'html') : ''"></div>
       </div>
     </div>
   </div>

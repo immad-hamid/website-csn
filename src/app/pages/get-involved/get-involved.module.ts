@@ -17,11 +17,11 @@ const routes: Routes = [
   },
   {
     path: 'fundraising',
-    loadChildren: '../become-a-member/become-a-member.module#BecomeAMemberModule'
+    loadChildren: '../fundraising/fundraising.module#FundraisingModule'
   },
   {
     path: 'volunteering',
-    loadChildren: '../become-a-member/become-a-member.module#BecomeAMemberModule'
+    loadChildren: '../volunteering/volunteering.module#VolunteeringModule'
   }
 ];
 

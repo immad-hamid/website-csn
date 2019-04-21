@@ -37,7 +37,6 @@ export class AppComponent implements OnInit, AfterViewInit {
         console.error('error when checking for update', err);
       });
     }
-    console.log('app component on init');
   }
 
   openSnackBar() {
@@ -50,7 +49,5 @@ export class AppComponent implements OnInit, AfterViewInit {
     );
   }
 
-  ngAfterViewInit() {
-    console.log('app component after view init');
-  }
+  ngAfterViewInit() { }
 }

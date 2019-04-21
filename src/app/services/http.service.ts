@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from './../../environments/environment';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { RequestOptions } from '@angular/http';
+import { Headers } from '@angular/http';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +34,11 @@ export class HttpService {
     return this.http.delete(`${environment.url}${link}`);
   }
 
+  // post sub method
+  postSub(link: string, body: any) {
+    return this.http.post(link, body);
+  }
+
   // constructor(private http: HttpClient) { }
 
   verifyme() {
@@ -55,9 +62,16 @@ export class HttpService {
   }
 
   postMailChimp(url, data) {
-    const headers = this.createAuthorizationHeader(new HttpHeaders());
-    return this.http.post(environment.url + url, data, {
-      headers
+    const headers = new Headers();
+    console.log(headers);
+    debugger;
+    headers.append('Content-Type', 'application/json');
+    // const options = new RequestOptions({ headers: headers });
+
+    return this.http.post(url, data, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
     })
       .pipe(
         map(res => res),

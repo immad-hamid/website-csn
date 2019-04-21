@@ -11,6 +11,7 @@ import { SubHeaderModule } from './../../shared/components/sub-header/sub-header
 import { LoadersModule } from 'src/app/shared/components/loaders/loaders.module';
 import { SafeModule } from 'src/app/shared/pipe/safe/safe.module';
 import { BgWithContentBannerModule } from 'src/app/shared/components/bg-with-content-banner/bg-with-content-banner.module';
+import { FilterHtmlModule } from 'src/app/shared/pipe/filter-html/filter-html.module';
 
 const routes: Routes = [
   { path: '', component: AboutUsComponent }
@@ -28,6 +29,7 @@ const routes: Routes = [
     SafeModule,
     LoadersModule,
     BgWithContentBannerModule,
+    FilterHtmlModule,
     RouterModule.forChild(routes)
   ]
 })

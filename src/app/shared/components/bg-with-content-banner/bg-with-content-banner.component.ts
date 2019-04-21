@@ -10,6 +10,8 @@ export class BgWithContentBannerComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    console.log(this.program)
+  }
 
 }

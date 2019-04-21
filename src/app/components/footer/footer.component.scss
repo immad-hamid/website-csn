@@ -21,8 +21,14 @@ footer {
 
 .form-control {
     background: transparent;
+    color: #6a727a;
     &:focus {
         // outline: none !important;
         box-shadow: none;
     }
+}
+
+.mat-raised-button[disabled]:not([class*=mat-elevation-z]) {
+    background: rgba(255,255,255,0.2);
+    cursor: not-allowed;
 }

@@ -28,6 +28,46 @@ export class EndPointsService {
     return this.http.get(`/programs/${programId}`);
   }
 
+  getGhm() {
+    return this.http.get(`/ghm`);
+  }
+
+  getYouth() {
+    return this.http.get(`/youth-development`);
+  }
+
+  getOurHistory() {
+    return this.http.get(`/history`);
+  }
+
+  getMissionStatement() {
+    return this.http.get(`/mission`);
+  }
+
+  getWelfareAndSupport() {
+    return this.http.get(`/welfare`);
+  }
+
+  getMentorProgram() {
+    return this.http.get(`/mentor/program`);
+  }
+
+  getSponsorship() {
+    return this.http.get(`/sponsor`);
+  }
+
+  getFundraising() {
+    return this.http.get(`/fundraising`);
+  }
+
+  getVolunteer() {
+    return this.http.get(`/volunteer`);
+  }
+
+  getPrivacyPolicy() {
+    return this.http.get(`/privacy-terms`);
+  }
+
   getBlogs() {
     return this.http.get(`/blogs`);
   }

@@ -10,7 +10,7 @@
     <div class="row">
 
       <div class="col-md-6" *ngIf="(data$ | async)?.data as data; else loading">
-        <div [innerHTML]="data.content | safe: 'html'"></div>
+        <div [innerHTML]="data.content | filterHtml | safe: 'html'"></div>
       </div>
 
       <ng-template #loading>

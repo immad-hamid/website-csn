@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   donateDetail: { title: string; text: string; btn: string; url: string };
   homePageData$: any;
   loading: boolean;
-  programs: { heading: string; anchor: string; }[];
+  programs: { exception: boolean; heading: string; anchor: string; banner: { link: string; }; }[];
 
   constructor(
     private endPoints: EndPointsService
@@ -35,16 +35,28 @@ export class HomeComponent implements OnInit {
 
     this.programs = [
       {
+        exception: true,
         heading: 'Our<br> History',
-        anchor: '../our-history'
+        anchor: '../our-history',
+        banner: {
+          link: 'assets/img/strip.png'
+        }
       },
       {
+        exception: true,
         heading: 'Mission<br> Statement',
-        anchor: '../our-mission-statement'
+        anchor: '../our-mission-statement',
+        banner: {
+          link: 'assets/img/strip.png'
+        }
       },
       {
+        exception: true,
         heading: 'Welfare<br> & Support',
-        anchor: '../welfare-and-support'
+        anchor: '../welfare-and-support',
+        banner: {
+          link: 'assets/img/strip.png'
+        }
       }
     ];
 
