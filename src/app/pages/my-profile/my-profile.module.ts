@@ -7,6 +7,7 @@ import { SubHeaderModule } from './../../shared/components/sub-header/sub-header
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { LoadersModule } from 'src/app/shared/components/loaders/loaders.module';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
     MatCardModule,
     MatListModule,
     MatButtonModule,
+    LoadersModule,
     RouterModule.forChild(routes)
   ]
 })

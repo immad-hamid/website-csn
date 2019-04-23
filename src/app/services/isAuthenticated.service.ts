@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
-import { UsersService } from './users.service';
+import { HttpService } from './http.service';
 
 @Injectable()
 export class IsAuthenticatedService {
-    loggedIn = false;
-
-    constructor(private userService: UsersService) { }
+    constructor(private http: HttpService) { }
 
     isAuthenticated() {
         const promise = new Promise(
             (resolve, reject) => {
-                this.userService
-                    .verifyUser()
+                this.http
+                    .verifyme()
                     .subscribe(
-                        (res: any) => resolve(res.success),
+                        (res: any) => resolve(res),
                         (err: any) => resolve(false)
                     );
             }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { SubjectBehaviourService } from 'src/app/services/subject-behaviour.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -7,10 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProfileComponent implements OnInit {
   heading = 'My Profile';
+  subscription: Subscription;
+  show: any;
+  profile: any;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private behaviourSubject: SubjectBehaviourService
+  ) { }
 
   ngOnInit() {
+    this.subscription = this.behaviourSubject
+      .loginStatus
+      .subscribe(
+        res => {
+          console.log(res);
+          if (res.hasOwnProperty('success') && res.success) {
+            this.show = res.success;
+            this.profile = res.data.user;
+            console.log(this.profile);
+          } else {
+            this.router.navigate(['/home']);
+          }
+        },
+        err => {
+          console.log(err);
+          // error
+        }
+      );
   }
 
 }

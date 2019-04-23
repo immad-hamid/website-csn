@@ -39,24 +39,25 @@
 
     <div class="row">
 
-      <div *ngIf="!blogs.length" class="col-sm-12 text-center">
+      <div *ngIf="!blogs?.length" class="col-sm-12 text-center">
         <app-shared-inline-loader></app-shared-inline-loader>
         <p style="margin-top: -90px">Getting News & Updates...</p>
       </div>
 
-      <ng-container *ngIf="blogs.length">
-        <div class="col-sm-6" *ngFor="let item of blogs">
+      <ng-container *ngIf="blogs?.length">
+        <div class="col-sm-6" *ngFor="let blog of blogs">
           <div class="card mb-4">
+            <img class="card-img-top" *ngIf="blog?.img" [src]="blog.img" [alt]="blog.description">
              <div class="card-body">
-              <h5 class="card-title">{{item.title}}</h5>
-              <p class="card-text">{{item.description}}</p>
+              <h5 class="card-title">{{ blog.title }}</h5>
+              <p class="card-text">{{ blog.description }}</p>
               <div class="text-right">
-                <a mat-flat-button color="primary" [routerLink]="[item._id]">Read More</a>
+                <a mat-flat-button color="primary" [routerLink]="[blog._id]">Read More</a>
               </div>
             </div>
             <div class="card-footer">
               <mat-chip-list>
-                <mat-chip *ngFor="let tag of item.tags">{{tag}}</mat-chip>
+                <mat-chip *ngFor="let tag of blog.tags">{{ tag }}</mat-chip>
               </mat-chip-list>
             </div>
           </div>

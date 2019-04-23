@@ -6,6 +6,7 @@ import { UsersService } from 'src/app/services/users.service';
 import { environment } from 'src/environments/environment';
 import { MatSnackBar } from '@angular/material';
 import { SignupComponent } from '../signup/signup.component';
+import { SubjectBehaviourService } from 'src/app/services/subject-behaviour.service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private userService: UsersService,
     private snackBar: MatSnackBar,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private behaviourSubject: SubjectBehaviourService
   ) { }
 
   ngOnInit(): void {
@@ -54,10 +56,10 @@ export class LoginComponent implements OnInit {
 
         await this.userService.loginUser(data).subscribe(
           (res: any) => {
-            debugger;
             if (res.success) {
               this.loginForm.reset();
               environment.storage.setItem('token', res.data.token);
+              this.behaviourSubject.loginStatus.next(res);
               this.close();
               this.openSnackBar(res.message);
             } else {

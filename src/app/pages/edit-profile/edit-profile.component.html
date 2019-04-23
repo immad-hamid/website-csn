@@ -2,14 +2,15 @@
 
 <section class="sec-space">
   <div class="container">
-    <div class="row">
+    
+    <form [formGroup]="editForm" class="row" *ngIf="showForm">
       <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 mb-5">
         
 
         <p class="mb-2">
           <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
-            <input matInput value="Ezim" disabled>
+            <input formControlName="displayName" matInput>
             <mat-hint>Name can not be changed once account created.</mat-hint>
           </mat-form-field>
         </p>
@@ -17,7 +18,7 @@
         <p class="mb-2">
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput value="ezim@gmail.com">
+            <input formControlName="email" matInput value="ezim@gmail.com">
             <mat-hint>Email is required!</mat-hint>
           </mat-form-field>
         </p>
@@ -25,9 +26,9 @@
         <p class="mb-2">
           <mat-form-field appearance="outline">
             <mat-label>Heritage state of origin</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{food.viewValue}}
+            <mat-select formControlName="stateOfOrigin">
+              <mat-option *ngFor="let state of states" [value]="state.value">
+                {{state.viewValue}}
               </mat-option>
             </mat-select>
             <mat-hint>Heritage state of origin is optional!</mat-hint>
@@ -37,7 +38,7 @@
         <p class="mb-2">
           <mat-form-field appearance="outline">
             <mat-label>Age</mat-label>
-            <mat-select>
+            <mat-select formControlName="age">
               <mat-option *ngFor="let age of ages" [value]="age.value">
                 {{age.viewValue}}
               </mat-option>
@@ -49,7 +50,7 @@
         <p class="mb-2">
           <mat-form-field appearance="outline">
             <mat-label>Gender</mat-label>
-            <mat-select>
+            <mat-select formControlName="gender">
               <mat-option *ngFor="let gender of genders" [value]="gender.value">
                 {{gender.viewValue}}
               </mat-option>
@@ -61,7 +62,7 @@
         <p class="mb-2">
           <mat-form-field appearance="outline">
             <mat-label>Contact Number</mat-label>
-            <input matInput value="ezim@gmail.com">
+            <input formControlName="contactNumber" matInput>
             <mat-hint>Contact Number is optional!</mat-hint>
           </mat-form-field>
         </p>
@@ -69,26 +70,19 @@
         <p class="mb-2">
           <mat-form-field appearance="outline">
             <mat-label>Address</mat-label>
-            <input matInput value="Garisson Bay, Street no. 5, TX, 759666">
+            <input matInput formControlName="address">
             <mat-hint>Address is optional!</mat-hint>
           </mat-form-field>
         </p>
-        
-        <p class="mb-2">
-          <mat-form-field appearance="outline">
-            <mat-label>Password</mat-label>
-            <input type="password" matInput placeholder="Password">
-            <mat-hint>Password is required!</mat-hint>
-          </mat-form-field>
-        </p>
-  
-        <!-- <p class="mb-2">
-          <mat-checkbox>I am of Igbo Ancestory?</mat-checkbox>
-          <mat-checkbox>I am happy to also be contacted by Igbo businesses?</mat-checkbox>
-        </p> -->
 
-        <button class="mt-2" mat-flat-button color="accent">Save Changes</button>
+        <button class="mt-2" mat-flat-button color="accent" (click)="saveChanges()">Save Changes</button>
             
+      </div>
+    </form>
+
+    <div class="row" *ngIf="!showForm">
+      <div class="col-sm-12 text-right">
+        <app-shared-inline-loader></app-shared-inline-loader>
       </div>
     </div>
   </div>

@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { MatSnackBar } from '@angular/material';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { SubjectBehaviourService } from 'src/app/services/subject-behaviour.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent implements OnInit, OnDestroy {
   modelClass = true;
   signupForm: FormGroup;
   genders: any[] = [
@@ -17,14 +19,33 @@ export class FooterComponent implements OnInit {
     { value: 'no', viewValue: 'Prefer Not to Say' }
   ];
   disBtn: boolean;
+  subscription: Subscription;
+  show: any;
 
   constructor(
     private userService: UsersService,
     private snackBar: MatSnackBar,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private behaviourSubject: SubjectBehaviourService
   ) { }
 
   ngOnInit() {
+    this.subscription = this.behaviourSubject
+      .loginStatus
+      .subscribe(
+        res => {
+          console.log(res);
+          if (res.hasOwnProperty('success') && res.success) {
+            this.show = res.success;
+          } else {
+            this.show = false;
+          }
+        },
+        err => {
+          console.log(err);
+        }
+      );
+
     this.signupForm = this.fb.group({
       username: [''],
       fname: ['', [Validators.required, Validators.minLength(3)]],
@@ -40,6 +61,10 @@ export class FooterComponent implements OnInit {
     });
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
   async registerUser() {
     if (this.signupForm.valid && this.password.value === this.repassword.value) {
       const mailChimpObj = await {
@@ -50,17 +75,6 @@ export class FooterComponent implements OnInit {
 
       const subscribed: any = await new Promise(
         (resolve, reject) => {
-          // this.userService
-          //   .registerUserToMC(mailChimpObj)
-          //   .subscribe(
-          //     (res: any) => {
-          //       console.log(res);
-          //       debugger;
-          //       resolve(res);
-          //     },
-          //     err => reject(err)
-          //   );
-
           try {
             const xhr = new XMLHttpRequest();
             xhr.onreadystatechange = () => {

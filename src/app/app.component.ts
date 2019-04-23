@@ -2,6 +2,7 @@ import { SwUpdate } from '@angular/service-worker';
 import { Component, OnInit, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { isPlatformServer } from '@angular/common';
+import { IsAuthenticatedService } from './services/isAuthenticated.service';
 // import { WINDOW, LOCAL_STORAGE } from '@ng-toolkit/universal';
 // import { environment } from './../environments/environment';
 

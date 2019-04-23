@@ -18,6 +18,7 @@ import { SafeModule } from 'src/app/shared/pipe/safe/safe.module';
 import { NguCarouselModule } from '@ngu/carousel';
 import { BgWithContentBannerModule } from 'src/app/shared/components/bg-with-content-banner/bg-with-content-banner.module';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }
@@ -39,6 +40,7 @@ const routes: Routes = [
     SectionHeaderModule,
     MatSnackBarModule,
     MatDividerModule,
+    MatCardModule,
     MatCarouselModule,
     LoadersModule,
     SafeModule,

@@ -5,6 +5,9 @@ import { NgModule } from '@angular/core';
 // routing module
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+// guards
+import { AuthGuard } from './guard/auth.guard';
+import { UserStatusGuard } from './guard/user-status.guard';
 // layout module
 import { LayoutModule } from './layouts/layout.module';
 // common components module
@@ -16,8 +19,8 @@ import { HttpService } from './services/http.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { IsAuthenticatedService } from './services/isAuthenticated.service';
 import { AuthService } from './services/auth.service';
-import { AuthGuard } from './guard/auth.guard';
 import { UsersService } from './services/users.service';
+import { SubjectBehaviourService } from './services/subject-behaviour.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,9 @@ import { UsersService } from './services/users.service';
     IsAuthenticatedService,
     AuthService,
     AuthGuard,
-    UsersService
+    UserStatusGuard,
+    UsersService,
+    SubjectBehaviourService
   ],
 })
 export class AppModule { }

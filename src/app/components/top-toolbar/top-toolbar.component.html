@@ -6,14 +6,23 @@
 
     <span class="nav-links mr-3">
       <a [routerLink]="[ '/shop' ]">ICSN Shop</a>
+      
+      <ng-container *ngIf="!show">
+        <span class="mr-1 ml-1">|</span>
+        <a (click)="openLoginComponent()">Login</a>
+        <span class="mr-1 ml-1">|</span>
+        <a (click)="openSignupComponent()">Sign Up</a>
+      </ng-container>
 
-      <span class="mr-1 ml-1">|</span>
-      <a (click)="openLoginComponent()">Login</a>
-      <span class="mr-1 ml-1">|</span>
-      <a (click)="openSignupComponent()">Sign Up</a>
-
-      <span class="mr-1 ml-1">|</span>
-      <a [routerLink]="[ '/my-profile' ]">Profile</a>
+      <ng-container *ngIf="show">
+        <span class="mr-1 ml-1">|</span>
+        <a [matMenuTriggerFor]="menu">Profile</a>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="['/my-profile']">My Profile</button>
+        </mat-menu>
+        <span class="mr-1 ml-1">|</span>
+        <a (click)="logout()">Logout</a>
+      </ng-container>
     </span>
 
     <mat-icon (click)="redirectSocial('https://www.instagram.com/icsn_uk/?hl=en')" aria-label="ICSN Instagram">

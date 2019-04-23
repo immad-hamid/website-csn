@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EndPointsService } from 'src/app/services/end-points.service';
 
 @Component({
   selector: 'app-home-recent-events',
@@ -17,8 +18,9 @@ export class RecentEventsComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     content: string;
   }[];
+  items: number[];
 
-  constructor() { }
+  constructor(private endPoints: EndPointsService) { }
 
   ngOnInit() {
     this.detail = {
@@ -27,20 +29,7 @@ export class RecentEventsComponent implements OnInit {
       content: 'We have a mixture of members so we actively try to put on different events and activities monthly that appeal to our members. We have a mixture of Monthly Events (such as our Monthly General House Meeting aka GHM’s, Monthly Book Club), Random Mini Socials (such as bowling, football, film club, member-only dinners), and Major Social Events (such as Summer BBQ’s, Reunion Dinners, Iri-Ji Festivals, Christmas Party, Valentine’s Ball) which are all great events aimed at making it easier to mix and network with like-minded Igbo people.'
     };
 
-    // this.events = [
-    //   {
-    //     img: 'assets/img/event1.png',
-    //     content: 'We host regular sessions of Language, cooking and dance schools through out the year'
-    //   },
-    //   {
-    //     img: 'assets/img/event2.png',
-    //     content: 'We host regular sessions of Language, cooking and dance schools through out the year'
-    //   },
-    //   {
-    //     img: 'assets/img/event3.png',
-    //     content: 'We host regular sessions of Language, cooking and dance schools through out the year'
-    //   }
-    // ];
+    this.items = [1, 2, 3];
 
     this.posts = [
       {
@@ -65,6 +54,12 @@ export class RecentEventsComponent implements OnInit {
         content: 'We host regular sessions of Language, cooking and dance schools through out the year all hosted in a fun and supportive environment'
       }
     ];
+
+    this.endPoints.getEvents()
+      .subscribe(
+        res => console.log(res),
+        err => console.log(err)
+      );
   }
 
 }
