@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardImageContentComponent implements OnInit {
   @Input() post;
+  @Input() routerUrl;
 
   constructor() { }
 

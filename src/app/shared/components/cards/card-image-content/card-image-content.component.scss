@@ -15,6 +15,12 @@ mat-card-content {
     background-size: cover;
 }
 
+.cardImgs {
+    background-size: cover !important;
+    background-position: center !important;
+    min-height: 220px;
+}
+
 .card-footer {
     background-color: transparent;
 }

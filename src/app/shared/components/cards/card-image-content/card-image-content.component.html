@@ -1,24 +1,42 @@
 <mat-card class="card">
   <mat-card-header *ngIf="post.avatar">
     <div *ngIf="post.avatar" mat-card-avatar class="header-image"></div>
-    <mat-card-title>{{ post.heading }}</mat-card-title>
-    <mat-card-subtitle *ngIf="post.sub">{{ post.sub }}</mat-card-subtitle>
+    <mat-card-title>{{ post?.title }}</mat-card-title>
+    <mat-card-subtitle *ngIf="post.sub">{{ post?.sub }}</mat-card-subtitle>
   </mat-card-header>
   
-  <img mat-card-image [src]="post.img" [alt]="post.heading">
+  <span *ngIf="post?.banner?.link; then normImgTemp; else dummyImgTemp"></span>
+  <ng-template #normImgTemp>
+    <!-- <img mat-card-image [src]="post.banner.link" [alt]="post.title"> -->
+    <div 
+      mat-card-image
+      class="mb-3 cardImgs"
+      [ngStyle]="{'background' : 'url('+ post.banner.link +')'}">
+    </div>
+  </ng-template>
+  <ng-template #dummyImgTemp>
+    <div 
+      mat-card-image
+      class="mb-3 cardImgs"
+      [ngStyle]="{'background' : 'url(assets/img/strip.png)'}">
+    </div>
+  </ng-template>
+  
+
+  
 
   <mat-card-header *ngIf="!post.avatar" [ngClass]="{'mar-zero': !post.avatar}">
     <div *ngIf="post.avatar" mat-card-avatar class="header-image"></div>
-    <mat-card-title>{{ post.heading }}</mat-card-title>
-    <mat-card-subtitle *ngIf="post.sub">{{ post.sub }}</mat-card-subtitle>
+    <mat-card-title>{{ post.title }}</mat-card-title>
+    <mat-card-subtitle *ngIf="post.sub">{{ post?.sub }}</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content>
     <p>
-      {{ post.content }}
+      {{ post?.description }}
     </p>
   </mat-card-content>
   <mat-card-actions class="text-right">
-    <a mat-button color="primary" [routerLink]="[ post.id ]">Read More</a>
+    <a mat-button color="primary" [routerLink]="[ routerUrl ]">Read More</a>
   </mat-card-actions>
 </mat-card>

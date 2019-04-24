@@ -10,10 +10,11 @@
       <div class="col-md-12">
         <div class="card-group">
           <div 
-            *ngFor="let post of posts"
+            *ngFor="let post of posts | slice:0:3"
             class="col-md-4 pt-4">
             <app-shared-card-image-content
               [post]="post"
+              [routerUrl]="getRouterUrl(post)"
             >
             </app-shared-card-image-content>
           </div>

@@ -48,6 +48,21 @@
         <div class="col-sm-6" *ngFor="let blog of blogs">
           <div class="card mb-4">
             <img class="card-img-top" *ngIf="blog?.img" [src]="blog.img" [alt]="blog.description">
+            
+            <span *ngIf="blog?.banner?.link; then normImgTemp; else dummyImgTemp"></span>
+            <ng-template #normImgTemp>
+              <div 
+                class="mb-3 cardImgs card-img-top"
+                [ngStyle]="{'background' : 'url('+ blog.banner.link +')'}">
+              </div>
+            </ng-template>
+            <ng-template #dummyImgTemp>
+              <div 
+                class="mb-3 cardImgs card-img-top"
+                [ngStyle]="{'background' : 'url(assets/img/strip.png)'}">
+              </div>
+            </ng-template>
+
              <div class="card-body">
               <h5 class="card-title">{{ blog.title }}</h5>
               <p class="card-text">{{ blog.description }}</p>
