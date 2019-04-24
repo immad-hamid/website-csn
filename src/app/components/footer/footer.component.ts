@@ -34,7 +34,6 @@ export class FooterComponent implements OnInit, OnDestroy {
       .loginStatus
       .subscribe(
         res => {
-          console.log(res);
           if (res.hasOwnProperty('success') && res.success) {
             this.show = res.success;
           } else {
@@ -79,7 +78,6 @@ export class FooterComponent implements OnInit, OnDestroy {
             const xhr = new XMLHttpRequest();
             xhr.onreadystatechange = () => {
               if (xhr.readyState === XMLHttpRequest.DONE) {
-                console.log(xhr.response);
                 const response = JSON.parse(xhr.response);
                 response.status === 'success' ? resolve({ status: true }) : resolve({ status: false });
               }

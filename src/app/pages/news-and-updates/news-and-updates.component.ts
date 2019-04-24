@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { MatChipInputEvent } from '@angular/material';
+import { MatChipInputEvent, MatSnackBar } from '@angular/material';
 import { EndPointsService } from '../../services/end-points.service';
 
 @Component({
@@ -10,16 +10,55 @@ import { EndPointsService } from '../../services/end-points.service';
 })
 export class NewsAndUpdatesComponent implements OnInit {
   heading = 'News & Updates';
-  items: number[];
+  // items: number[];
   visible = true;
   selectable = true;
   removable = true;
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  fruits: any[] = [
+  tags: any[] = [
     // {name: 'Lemon'}
   ];
   blogs = [];
+  blogsCopy: any;
+
+  constructor(
+    private endPoints: EndPointsService,
+    private snackBar: MatSnackBar
+  ) { }
+
+  ngOnInit() {
+    // this.items = [1, 2, 3, 4, 5, 6];
+    this.endPoints.getBlogs().subscribe((res: any) => {
+      this.blogs = [...res.data];
+      this.blogsCopy = [...res.data];
+      console.log(this.blogs);
+    }, err => {
+      console.log(err);
+    });
+  }
+
+  ftrBlogs() {
+    if (this.tags && this.tags.length) {
+      const tags = this.tags.map(tag => tag.name).join(',');
+      this.blogs = [];
+
+      this.endPoints
+        .getFilteredBlogs(tags)
+        .subscribe(
+          (res: any) => {
+            if (res.data && res.data.length) {
+              this.blogs = [...res.data];
+            } else {
+              this.tags = [];
+              this.openSnackBar('No data found');
+              this.blogs = [...this.blogsCopy];
+            }
+          },
+          err => console.log(err)
+        );
+    }
+  }
 
   add(event: MatChipInputEvent): void {
     const input = event.input;
@@ -27,7 +66,7 @@ export class NewsAndUpdatesComponent implements OnInit {
 
     // Add our fruit
     if ((value || '').trim()) {
-      this.fruits.push({ name: value.trim() });
+      this.tags.push({ name: value.trim() });
     }
 
     // Reset the input value
@@ -37,23 +76,21 @@ export class NewsAndUpdatesComponent implements OnInit {
   }
 
   remove(fruit: any): void {
-    const index = this.fruits.indexOf(fruit);
+    const index = this.tags.indexOf(fruit);
 
     if (index >= 0) {
-      this.fruits.splice(index, 1);
+      this.tags.splice(index, 1);
     }
   }
 
-  constructor(private apiService: EndPointsService) { }
-
-  ngOnInit() {
-    this.items = [1, 2, 3, 4, 5, 6];
-    this.apiService.getBlogs().subscribe((res: any) => {
-      console.log(res);
-      this.blogs = res.data;
-    }, err => {
-      console.log(err);
-    });
+  openSnackBar(msg) {
+    this.snackBar.open(msg, 'Close',
+      {
+        duration: 3000,
+        horizontalPosition: 'right',
+        verticalPosition: 'bottom'
+      }
+    );
   }
 
 }

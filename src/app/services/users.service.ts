@@ -19,4 +19,8 @@ export class UsersService {
   getUsers(role) {
     return this.http.get(`/accounts/?role=${role}`);
   }
+
+  updateUsers(id, body) {
+    return this.http.update(`/users/${id}`, body);
+  }
 }

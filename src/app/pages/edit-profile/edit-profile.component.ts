@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { SubjectBehaviourService } from 'src/app/services/subject-behaviour.service';
 import { Subscription } from 'rxjs';
 import { EndPointsService } from 'src/app/services/end-points.service';
+import { UsersService } from 'src/app/services/users.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-edit-profile',
@@ -47,7 +49,9 @@ export class EditProfileComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private router: Router,
     private behaviourSubject: SubjectBehaviourService,
-    private endPointService: EndPointsService
+    private endPointService: EndPointsService,
+    private userService: UsersService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -61,7 +65,9 @@ export class EditProfileComponent implements OnInit, OnDestroy {
             this.profile = res.data.user;
             console.log(this.profile);
 
-            this.endPointService.getUser(this.profile._id).subscribe(res => console.log(res));
+            // this.endPointService
+            //     .getUser(this.profile._id)
+            //     .subscribe((res: any) => console.log(res));
 
             this.createForm();
           } else {
@@ -79,32 +85,32 @@ export class EditProfileComponent implements OnInit, OnDestroy {
     this.editForm = this.fb.group({
       displayName: [{ value: this.profile.displayName, disabled: true }],
       email: [this.profile.username, [Validators.required, Validators.email]],
-      stateOfOrigin: [''],
+      stateOfOrigin: [this.profile.stateOfOrigin || ''],
       age: [this.profile.age || ''],
       gender: [this.profile.gender],
       contactNumber: [this.profile.contactNumber || ''],
       address: [this.profile.address || '']
     });
 
-    if (this.profile.stateOfOrigin) {
-      this.editForm.get('stateOfOrigin').value(this.profile.stateOfOrigin);
-    }
+    // if (this.profile.stateOfOrigin) {
+    //   this.editForm.get('stateOfOrigin').value(this.profile.stateOfOrigin);
+    // }
 
-    if (this.profile.age) {
-      this.editForm.get('age').value(this.profile.age);
-    }
+    // if (this.profile.age) {
+    //   this.editForm.get('age').value(this.profile.age);
+    // }
 
-    if (this.profile.gender) {
-      this.editForm.get('gender').value(this.profile.gender);
-    }
+    // if (this.profile.gender) {
+    //   this.editForm.get('gender').value(this.profile.gender);
+    // }
 
-    if (this.profile.contactNumber) {
-      this.editForm.get('contactNumber').value(this.profile.contactNumber);
-    }
+    // if (this.profile.contactNumber) {
+    //   this.editForm.get('contactNumber').value(this.profile.contactNumber);
+    // }
 
-    if (this.profile.address) {
-      this.editForm.get('address').value(this.profile.address);
-    }
+    // if (this.profile.address) {
+    //   this.editForm.get('address').value(this.profile.address);
+    // }
 
     this.showForm = true;
   }
@@ -115,6 +121,24 @@ export class EditProfileComponent implements OnInit, OnDestroy {
 
   saveChanges() {
     console.log(this.editForm.value);
+    this.userService
+      .updateUsers(this.profile._id, this.editForm.value)
+      .subscribe(
+        (res: any) => {
+          this.openSnackBar(res.message);
+        },
+        err => console.log(err)
+      );
+  }
+
+  openSnackBar(msg) {
+    this.snackBar.open(msg, 'Close',
+      {
+        duration: 3000,
+        horizontalPosition: 'right',
+        verticalPosition: 'bottom'
+      }
+    );
   }
 
 }

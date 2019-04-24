@@ -12,9 +12,9 @@
           <div class="col-sm-8">
             <mat-form-field class="mr-2" style="max-width: 100%; width: 100%">
               <mat-chip-list #chipList>
-                <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
-                          [removable]="removable" (removed)="remove(fruit)">
-                  {{fruit.name}}
+                <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
+                          [removable]="removable" (removed)="remove(tag)">
+                  {{tag.name}}
                   <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                 </mat-chip>
                 <input placeholder="New Tags..."
@@ -26,7 +26,7 @@
             </mat-form-field>
           </div>
           <div class="col-sm-4">
-            <button mat-raised-button color="accent">Search</button>
+            <button mat-raised-button color="accent" [disabled]="!tags?.length" (click)="ftrBlogs()">Search</button>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@
               <h5 class="card-title">{{ blog.title }}</h5>
               <p class="card-text">{{ blog.description }}</p>
               <div class="text-right">
-                <a mat-flat-button color="primary" [routerLink]="[blog._id]">Read More</a>
+                <a mat-button color="primary" [routerLink]="[blog._id]">Read More</a>
               </div>
             </div>
             <div class="card-footer">

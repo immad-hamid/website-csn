@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { EventsComponent } from './events.component';
 import { SubHeaderModule } from './../../shared/components/sub-header/sub-header.module';
@@ -21,6 +22,8 @@ const routes: Routes = [
     CommonModule,
     SubHeaderModule,
     CardsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     MatDatepickerModule,
     MatNativeDateModule,

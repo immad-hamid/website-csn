@@ -76,13 +76,23 @@ export class EndPointsService {
     return this.http.get(`/blogs/${blogId}`);
   }
 
-  getEvents() {
+  getFilteredBlogs(tags) {
+    return this.http.get(`/blogs?page=0&tags=${tags}`);
+  }
+  // hello,test
+
+  getEvents(from?, to?) {
     return this.http.get(`/events`);
   }
 
   getEvent(eventId) {
     return this.http.get(`/events/${eventId}`);
   }
+
+  getFilteredEvents(from, to) {
+    return this.http.get(`/events?page=0&startDate=${from}&endDate=${to}`);
+  }
+  // 2019-03-11
 
   addNewMember(body) {
     return this.http.post(`https://us20.api.mailchimp.com/schema/3.0/Lists/Members`, body);

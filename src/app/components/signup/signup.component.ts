@@ -81,7 +81,7 @@ export class SignupComponent implements OnInit {
             xhr.send(JSON.stringify(mailChimpObj));
           } catch (e) {
             console.error(e);
-            resolve({ status: true });
+            resolve({ status: false });
           }
         }
       );
@@ -90,6 +90,7 @@ export class SignupComponent implements OnInit {
       obj.username = obj.email;
       obj.displayName = `${obj.fname} ${obj.lname}`;
       delete obj.repassword;
+      console.log(obj);
 
       try {
         this.disBtn = true;

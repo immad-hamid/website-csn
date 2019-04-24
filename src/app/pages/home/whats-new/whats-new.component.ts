@@ -60,7 +60,6 @@ export class WhatsNewComponent implements OnInit {
 
     this.endPoints.getBlogs().subscribe(
       (res: any) => {
-        debugger;
         this.posts = res.data;
       },
       err => console.log(err)

@@ -28,7 +28,6 @@ export class TopToolbarComponent implements OnInit, OnDestroy {
       .loginStatus
       .subscribe(
         res => {
-          console.log(res);
           if (res.hasOwnProperty('success') && res.success) {
             this.show = res.success;
             this.profile = res.user;
