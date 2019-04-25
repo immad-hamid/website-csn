@@ -1,12 +1,11 @@
-import { Injectable } from '@angular/core';
-import { HttpService } from './http.service';
+import { Injectable } from "@angular/core";
+import { HttpService } from "./http.service";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class EndPointsService {
-
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService) {}
 
   getUser(uid) {
     return this.http.get(`/users/${uid}`);
@@ -89,12 +88,17 @@ export class EndPointsService {
     return this.http.get(`/events/${eventId}`);
   }
 
-  getFilteredEvents(from, to) {
-    return this.http.get(`/events?page=0&startDate=${from}&endDate=${to}`);
+  getFilteredEvents(startDate, endDate) {
+    return this.http.get(
+      `/events?page=0&startDate=${startDate}&endDate=${endDate}`
+    );
   }
   // 2019-03-11
 
   addNewMember(body) {
-    return this.http.post(`https://us20.api.mailchimp.com/schema/3.0/Lists/Members`, body);
+    return this.http.post(
+      `https://us20.api.mailchimp.com/schema/3.0/Lists/Members`,
+      body
+    );
   }
 }

@@ -44,8 +44,7 @@
             matInput 
             [matDatepicker]="fromDate" 
             placeholder="From Date"
-            (dateChange)="fromEvent($event)"
-            [formControl]="fromDate"
+            [(ngModel)]="startVal"
             readonly>
           <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
           <mat-datepicker #fromDate></mat-datepicker>
@@ -56,14 +55,15 @@
             matInput 
             [matDatepicker]="toDate" 
             placeholder="To Date"
-            (dateChange)="toEvent($event)"
-            [formControl]="toDate"
+            [min]="startVal"
+            [(ngModel)]="endVal"
+            [disabled]="!startVal"
             readonly>
           <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
           <mat-datepicker #toDate></mat-datepicker>
         </mat-form-field>
 
-        <button mat-raised-button color="accent">Search</button>
+        <button mat-raised-button color="accent" [disabled]="!startVal || !endVal" (click)="getFitleredEvents()">Search</button>
       </div>
     </div>
 

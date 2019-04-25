@@ -60,7 +60,6 @@ export class RecentEventsComponent implements OnInit {
 
     this.endPoints.getEvents().subscribe(
       (res: any) => {
-        console.log(res);
         this.posts = res.data;
       },
       err => console.log(err)

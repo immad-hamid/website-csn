@@ -21,7 +21,6 @@ export class WhatsNewComponent implements OnInit {
   }[];
 
   constructor(private endPoints: EndPointsService) {
-    console.log("whats new constructor");
   }
 
   ngOnInit() {
