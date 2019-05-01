@@ -18,15 +18,12 @@ export class AppComponent implements OnInit, AfterViewInit {
     private swUpdate: SwUpdate,
     private snackBar: MatSnackBar,
     @Inject(PLATFORM_ID) private platformId: any
-  ) {
-    console.log('app component constructor');
-  }
+  ) { }
 
   ngOnInit(): void {
     // if (isPlatformServer(this.platformId)) {
     //   return;
     // }
-    console.log('app component on init');
     if (this.swUpdate.isEnabled) {
       this.swUpdate.available.subscribe((evt) => {
         console.log('service worker updated');

@@ -9,10 +9,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SingleNewsAndUpdatesComponent implements OnInit {
   blog;
-  constructor(private apiService: EndPointsService, private activatedRoute: ActivatedRoute) { }
+  constructor(private endPointsService: EndPointsService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.apiService.getBlog(this.activatedRoute.snapshot.params.id).subscribe((res: any) => {
+    this.endPointsService.getBlog(this.activatedRoute.snapshot.params.id).subscribe((res: any) => {
       console.log(res);
       this.blog = res.data;
     }, err => {

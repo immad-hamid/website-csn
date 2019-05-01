@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h5 class="modal-title pull-left text-white">{{ data?.displayName }}</h5>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-sm-12 text-center mb-3">
+        <img [src]="data?.image?.link" class="rounded-circle" style="max-width: 120px; width: 100%" alt="data?.displayName">
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal-footer">
+    <p>{{ data?.bio }}</p>
+  </div>

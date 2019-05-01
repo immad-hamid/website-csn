@@ -17,7 +17,7 @@ export class RecentBlogPostsComponent implements OnInit {
     description: string;
   }[];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.posts = [
@@ -45,7 +45,7 @@ export class RecentBlogPostsComponent implements OnInit {
         title: "Programmes",
         // tslint:disable-next-line:max-line-length
         description:
-          "We host regular sessions of Language, cooking and dance schools through out the year all hosted in a fun and supportive environment"
+          "We host regular sessions of Language, cooking and dance schools throughout the year. All hosted in a fun and supportive environment with Igbos and non-Igbos in attendance. To register for upcoming programmes,  check out the events page"
       },
       {
         id: "../youth-development",

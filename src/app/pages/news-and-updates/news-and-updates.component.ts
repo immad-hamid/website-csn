@@ -32,7 +32,6 @@ export class NewsAndUpdatesComponent implements OnInit {
     this.endPoints.getBlogs().subscribe((res: any) => {
       this.blogs = [...res.data];
       this.blogsCopy = [...res.data];
-      console.log(this.blogs);
     }, err => {
       console.log(err);
     });

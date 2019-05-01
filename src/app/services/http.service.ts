@@ -51,9 +51,4 @@ export class HttpService {
   delete(link: string) {
     return this.http.delete(`${environment.url}${link}`);
   }
-
-  // post sub method
-  postSub(link: string, body: any) {
-    return this.http.post(link, body);
-  }
 }

@@ -79,7 +79,6 @@ export class EndPointsService {
   getFilteredBlogs(tags) {
     return this.http.get(`/blogs?page=0&tags=${tags}`);
   }
-  // hello,test
 
   getEvents(from?, to?) {
     return this.http.get(`/events`);
@@ -92,9 +91,12 @@ export class EndPointsService {
   getFilteredEvents(from, to) {
     return this.http.get(`/events?page=0&startDate=${from}&endDate=${to}`);
   }
-  // 2019-03-11
 
-  addNewMember(body) {
-    return this.http.post(`https://us20.api.mailchimp.com/schema/3.0/Lists/Members`, body);
+  getMembers() {
+    return this.http.get(`/members`);
+  }
+
+  contactUs(body) {
+    return this.http.post(`/contactus`, body);
   }
 }

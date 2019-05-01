@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EndPointsService } from 'src/app/services/end-points.service';
+import { EndPointsService } from './../../services/end-points.service';
 
 @Component({
   selector: 'app-home',
@@ -62,19 +62,7 @@ export class HomeComponent implements OnInit {
 
     setTimeout(() => {
       this.loading = true;
-      console.log(this.loading);
     }, 2000);
-
-    // this.endPoints
-    //   .getHomePageData()
-    //   .subscribe(
-    //     res => {
-    //       console.log(res);
-    //     },
-    //     err => {
-    //       console.log(err);
-    //     }
-    //   );
   }
 
 }

@@ -9,11 +9,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SingleEventComponent implements OnInit {
   event;
-  constructor(private apiService: EndPointsService, private activatedRoute: ActivatedRoute) { }
+  constructor(private endPointsService: EndPointsService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.apiService.getEvent(this.activatedRoute.snapshot.params.id).subscribe((res: any) => {
-      console.log(res);
+    this.endPointsService.getEvent(this.activatedRoute.snapshot.params.id).subscribe((res: any) => {
       this.event = res.data;
     }, err => {
       console.log(err);

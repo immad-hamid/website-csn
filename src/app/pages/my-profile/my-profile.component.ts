@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { SubjectBehaviourService } from 'src/app/services/subject-behaviour.service';
+import { SubjectBehaviourService } from './../../services/subject-behaviour.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -24,18 +24,15 @@ export class MyProfileComponent implements OnInit {
       .loginStatus
       .subscribe(
         res => {
-          console.log(res);
           if (res.hasOwnProperty('success') && res.success) {
             this.show = res.success;
             this.profile = res.data.user;
-            console.log(this.profile);
           } else {
             this.router.navigate(['/home']);
           }
         },
         err => {
           console.log(err);
-          // error
         }
       );
   }

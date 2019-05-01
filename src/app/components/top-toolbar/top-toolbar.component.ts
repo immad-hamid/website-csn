@@ -3,7 +3,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
-import { SubjectBehaviourService } from 'src/app/services/subject-behaviour.service';
+import { SubjectBehaviourService } from './../../services/subject-behaviour.service';
 import { Subscription } from 'rxjs';
 import { environment } from 'src/environments/environment';
 

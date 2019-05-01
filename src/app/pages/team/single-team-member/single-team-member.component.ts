@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { MemberDetailComponent } from '../member-detail/member-detail.component';
+import { SubjectBehaviourService } from './../../../services/subject-behaviour.service';
 
 @Component({
   selector: 'app-single-team-member',
@@ -7,10 +10,33 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SingleTeamMemberComponent implements OnInit {
   @Input() member;
+  bsModalRef: BsModalRef;
 
-  constructor() { }
+  constructor(
+    private modalService: BsModalService,
+    private subjectBehaviour: SubjectBehaviourService
+  ) { }
 
   ngOnInit() {
+  }
+
+  showMemberDetail(member) {
+    const config = {
+      // configuration options
+      class: 'modal-md',
+      animated: true,
+      backdrop: 'static', // true|false|'static',
+      ignoreBackdropClick: true,
+      keyboard: false
+    };
+
+    this.bsModalRef = this.modalService.show(
+      MemberDetailComponent,
+      Object.assign(config)
+    );
+    this.bsModalRef.content.closeBtnName = 'Close';
+
+    this.subjectBehaviour.userInfo.next(member);
   }
 
 }

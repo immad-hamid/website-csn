@@ -5,7 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MaterialModule } from './../../../material/material.module';
 import { CardsWithoutImageComponent } from './cards-without-image/cards-without-image.component';
 import { RouterModule } from '@angular/router';
-// import { MaterialModule } from 'src/app/material/material.module';
+// import { MaterialModule } from './../../material/material.module';
 
 @NgModule({
   declarations: [

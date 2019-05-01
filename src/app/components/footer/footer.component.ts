@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { UsersService } from 'src/app/services/users.service';
+import { UsersService } from './../../services/users.service';
 import { MatSnackBar } from '@angular/material';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { SubjectBehaviourService } from 'src/app/services/subject-behaviour.service';
+import { SubjectBehaviourService } from './../../services/subject-behaviour.service';
 import { Subscription } from 'rxjs';
 
 @Component({

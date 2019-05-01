@@ -25,7 +25,7 @@
           <p class="mb-2">
               <mat-form-field appearance="outline">
                 <mat-label>Name</mat-label>
-                <input matInput>
+                <input matInput formControlName="name">
                 <mat-hint>Name is required!</mat-hint>
               </mat-form-field>
             </p>
@@ -33,7 +33,7 @@
             <p class="mb-2">
               <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput>
+                <input matInput formControlName="email">
                 <mat-hint>Email is required!</mat-hint>
               </mat-form-field>
             </p>
@@ -41,15 +41,15 @@
             <p class="mb-2">
               <mat-form-field appearance="outline">
                 <mat-label>Subject or Purpose</mat-label>
-                <input matInput>
-                <mat-hint>Email is required!</mat-hint>
+                <input matInput formControlName="subject">
+                <mat-hint>Subject is required!</mat-hint>
               </mat-form-field>
             </p>
             
             <p class="mb-2">
               <mat-form-field appearance="outline">
                 <mat-label>Company</mat-label>
-                <input matInput>
+                <input matInput formControlName="company">
                 <mat-hint>Company is optional</mat-hint>
               </mat-form-field>
             </p>
@@ -57,7 +57,7 @@
             <p class="mb-2">
               <mat-form-field appearance="outline">
                 <mat-label>Contact Number</mat-label>
-                <input matInput>
+                <input matInput formControlName="contactNo">
                 <mat-hint>Contact Number is optional</mat-hint>
               </mat-form-field>
             </p>
@@ -65,13 +65,18 @@
             <p class="mb-2">
               <mat-form-field appearance="outline">
                 <mat-label>Comment</mat-label>
-                <textarea matInput></textarea>
+                <textarea matInput formControlName="comment"></textarea>
                 <mat-hint>Comment is required!</mat-hint>
               </mat-form-field>
             </p>
 
-            <button style="height:53px" class="btn-block" mat-flat-button color="accent">Send</button>
+            <button [disabled]="contactForm.invalid" *ngIf="!disabledState" (click)="sendQuery()" style="height:53px" class="btn-block" mat-flat-button color="accent">Send</button>
 
+            <ng-container *ngIf="disabledState">
+              <p class="text-muted" style="margin-bottom: -90px">We are sending your query and you will be contacted back by our representative.</p>
+              <app-shared-inline-loader></app-shared-inline-loader>
+            </ng-container>
+            
         </form>
 
 

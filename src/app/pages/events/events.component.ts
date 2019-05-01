@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EndPointsService } from '../../services/end-points.service';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-import { FormControl } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-events',
@@ -10,33 +9,61 @@ import { FormControl } from '@angular/forms';
 })
 export class EventsComponent implements OnInit {
   heading = 'Events';
-  events;
-  // date = {
-  //   from: '',
-  //   to: ''
-  // };
-  fromDate = new FormControl(new Date());
-  toDate = new FormControl(new Date());
+  events: any;
+  eventsCopy: any;
+  startVal: any;
+  endVal: any;
 
-  constructor(private apiService: EndPointsService) { }
+  constructor(
+    private endPoints: EndPointsService,
+    private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit() {
-    this.apiService.getEvents().subscribe((res: any) => {
-      console.log(res);
-      this.events = res.data;
-      console.log(this.events);
-    }, err => {
-      console.log(err);
+    this.endPoints.getEvents().subscribe(
+      (res: any) => {
+        this.events = [...res.data];
+        this.eventsCopy = [...res.data];
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  GetFormattedDate(selectedData) {
+    const time = new Date(selectedData);
+    const month = time.getMonth() + 1;
+    const day = time.getDate();
+    const year = time.getFullYear();
+    return year + '-' + month + '-' + day;
+  }
+
+  async getFitleredEvents() {
+    const start = await this.GetFormattedDate(this.startVal);
+    const end = await this.GetFormattedDate(this.endVal);
+
+    this.endPoints.getFilteredEvents(start, end).subscribe(
+      (res: any) => {
+        if (res.data && res.data.length) {
+          this.startVal = '';
+          this.endVal = '';
+          this.openSnackBar(res.message);
+          this.events = res.data;
+        } else {
+          this.openSnackBar('No events found!!!');
+          this.events = [...this.eventsCopy];
+        }
+      },
+      err => console.log(err)
+    );
+  }
+
+  openSnackBar(msg) {
+    this.snackBar.open(msg, 'Close', {
+      duration: 3000,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom'
     });
-  }
-
-  fromEvent(event: MatDatepickerInputEvent<Date>) {
-    console.log(event.value);
-    console.log(this.fromDate);
-  }
-
-  toEvent(event: MatDatepickerInputEvent<Date>) {
-    console.log(event.value);
-    console.log(this.toDate);
   }
 }

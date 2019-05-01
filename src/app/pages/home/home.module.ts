@@ -13,10 +13,10 @@ import { SectionHeaderModule } from './../../shared/components/section-header/se
 import { StripModule } from './../../shared/components/strip/strip.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
-import { LoadersModule } from 'src/app/shared/components/loaders/loaders.module';
-import { SafeModule } from 'src/app/shared/pipe/safe/safe.module';
+import { LoadersModule } from './../../shared/components/loaders/loaders.module';
+import { SafeModule } from './../../shared/pipe/safe/safe.module';
 import { NguCarouselModule } from '@ngu/carousel';
-import { BgWithContentBannerModule } from 'src/app/shared/components/bg-with-content-banner/bg-with-content-banner.module';
+import { BgWithContentBannerModule } from './../../shared/components/bg-with-content-banner/bg-with-content-banner.module';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 

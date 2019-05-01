@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { UsersService } from 'src/app/services/users.service';
-import { environment } from 'src/environments/environment';
+import { UsersService } from './../../services/users.service';
+import { environment } from './../../../environments/environment';
 import { MatSnackBar } from '@angular/material';
 import { SignupComponent } from '../signup/signup.component';
-import { SubjectBehaviourService } from 'src/app/services/subject-behaviour.service';
+import { SubjectBehaviourService } from './../../services/subject-behaviour.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +21,6 @@ export class LoginComponent implements OnInit {
   constructor(
     // tslint:disable-next-line:no-shadowed-variable
     private BsModalRef: BsModalRef,
-    private router: Router,
     private userService: UsersService,
     private snackBar: MatSnackBar,
     private modalService: BsModalService,

@@ -4,7 +4,7 @@ import { StripComponent } from './strip.component';
 import { MaterialModule } from './../../../material/material.module';
 import { RouterModule } from '@angular/router';
 import { ExternalUrlModule } from '../../directives/external-url/external-url.module';
-// import { MaterialModule } from 'src/app/material/material.module';
+// import { MaterialModule } from './../../material/material.module';
 
 @NgModule({
   declarations: [StripComponent],

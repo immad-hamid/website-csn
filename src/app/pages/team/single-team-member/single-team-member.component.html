@@ -1,14 +1,12 @@
 
-<div class="team-member">
+<div class="team-member" style="cursor: pointer" (click)="showMemberDetail(member)">
   <figure>
-    <img [src]="member.img" alt="" class="img-responsive">
+    <img [src]="member?.image?.link" alt="" class="img-responsive">
     <figcaption>
       <div class="content">
-        <h4>{{ member.name }}</h4>
-        <p>{{ member.designation }}</p>
-        <p>{{ member?.detail }}</p>
+        <h4>{{ member?.displayName }}</h4>
+        <p>{{ member?.role }}</p>
       </div>
     </figcaption>
   </figure>
-  
 </div><!-- /.team-member-->

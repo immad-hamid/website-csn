@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EndPointsService } from 'src/app/services/end-points.service';
+import { EndPointsService } from './../../services/end-points.service';
 
 @Component({
   selector: 'app-privacy-and-terms',

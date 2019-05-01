@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EndPointsService } from 'src/app/services/end-points.service';
+import { EndPointsService } from './../../services/end-points.service';
 
 @Component({
   selector: 'app-about-us',
@@ -16,7 +16,6 @@ export class AboutUsComponent implements OnInit {
 
   ngOnInit() {
     this.data$ = this.endPointsService.getAboutPageData();
-    this.data$.subscribe(res => console.log(res));
 
     this.programs = [
       {

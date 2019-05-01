@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
-import { EndPointsService } from 'src/app/services/end-points.service';
+import { EndPointsService } from './../../services/end-points.service';
 declare let paypal: any;
 
 @Component({

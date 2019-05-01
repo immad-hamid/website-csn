@@ -21,12 +21,16 @@
         <div class="row">
           
           <ng-container *ngFor="let member of team">
-            <div class="col-md-3 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
               <app-single-team-member
                 [member]="member">
               </app-single-team-member>
             </div>
           </ng-container>
+
+          <div class="col-sm-12 text-center" *ngIf="!team">
+            <app-shared-inline-loader></app-shared-inline-loader>
+          </div>
           
         </div><!-- /.row -->
       </div><!-- /.container -->

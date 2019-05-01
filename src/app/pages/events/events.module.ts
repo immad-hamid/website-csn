@@ -8,7 +8,7 @@ import { SubHeaderModule } from './../../shared/components/sub-header/sub-header
 import { CardsModule } from './../../shared/components/cards/cards.module';
 import { MaterialModule } from './../../material/material.module';
 import { MatNativeDateModule } from '@angular/material';
-import { LoadersModule } from 'src/app/shared/components/loaders/loaders.module';
+import { LoadersModule } from './../../shared/components/loaders/loaders.module';
 
 const routes: Routes = [
   { path: '', component: EventsComponent }

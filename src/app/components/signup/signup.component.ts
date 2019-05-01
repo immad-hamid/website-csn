@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { LoginComponent } from '../login/login.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsersService } from 'src/app/services/users.service';
+import { UsersService } from './../../services/users.service';
 import { MatSnackBar } from '@angular/material';
 
 @Component({
@@ -19,8 +19,6 @@ export class SignupComponent implements OnInit {
     { value: 'no', viewValue: 'Prefer Not to Say' }
   ];
   disBtn: boolean;
-
-
 
   constructor(
     // tslint:disable-next-line:no-shadowed-variable
@@ -57,22 +55,10 @@ export class SignupComponent implements OnInit {
 
       const subscribed: any = await new Promise(
         (resolve, reject) => {
-          // this.userService
-          //   .registerUserToMC(mailChimpObj)
-          //   .subscribe(
-          //     (res: any) => {
-          //       console.log(res);
-          //       debugger;
-          //       resolve(res);
-          //     },
-          //     err => reject(err)
-          //   );
-
           try {
             const xhr = new XMLHttpRequest();
             xhr.onreadystatechange = () => {
               if (xhr.readyState === XMLHttpRequest.DONE) {
-                console.log(xhr.response);
                 const response = JSON.parse(xhr.response);
                 response.status === 'success' ? resolve({ status: true }) : resolve({ status: false });
               }
@@ -90,7 +76,6 @@ export class SignupComponent implements OnInit {
       obj.username = obj.email;
       obj.displayName = `${obj.fname} ${obj.lname}`;
       delete obj.repassword;
-      console.log(obj);
 
       try {
         this.disBtn = true;

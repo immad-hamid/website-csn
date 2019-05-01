@@ -7,16 +7,22 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" mat-flat-button [matMenuTriggerFor]="menu">About Us</a>
-        <mat-menu #menu="matMenu">
+        <a class="nav-link" mat-flat-button [matMenuTriggerFor]="aboutMenu">About Us</a>
+        <mat-menu #aboutMenu="matMenu">
           <button mat-menu-item [routerLink]="['/about-us']">Overview</button>
           <button mat-menu-item [routerLink]="['/our-team']">Our Team</button>
-          <button mat-menu-item [routerLink]="['/mentoring-program']">Mentoring</button>
+          <button mat-menu-item [routerLink]="['/our-history']">Our History</button>
+          <button mat-menu-item [routerLink]="['/our-mission-statement']">Mission Statement</button>
+          <button mat-menu-item [routerLink]="['/welfare-and-support']">Welfare And Support</button>
         </mat-menu>      
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" mat-flat-button [routerLink]="['/icsn-programmes']">Programmes</a>
+        <a class="nav-link" mat-flat-button [matMenuTriggerFor]="programmesMenu">Programmes</a>
+        <mat-menu #programmesMenu="matMenu">
+          <button mat-menu-item [routerLink]="['/icsn-programmes']">All Programmes</button>
+          <button mat-menu-item [routerLink]="['/mentoring-program']">Mentoring</button>
+        </mat-menu>  
       </li>
       <li class="nav-item">
         <a class="nav-link" mat-flat-button [routerLink]="['/events']">Events</a>

@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SubjectBehaviourService } from 'src/app/services/subject-behaviour.service';
+import { SubjectBehaviourService } from './../../services/subject-behaviour.service';
 import { Subscription } from 'rxjs';
-import { EndPointsService } from 'src/app/services/end-points.service';
-import { UsersService } from 'src/app/services/users.service';
+import { EndPointsService } from './../../services/end-points.service';
+import { UsersService } from './../../services/users.service';
 import { MatSnackBar } from '@angular/material';
 
 @Component({
@@ -59,15 +59,9 @@ export class EditProfileComponent implements OnInit, OnDestroy {
       .loginStatus
       .subscribe(
         res => {
-          console.log(res);
           if (res.hasOwnProperty('success') && res.success) {
             this.show = res.success;
             this.profile = res.data.user;
-            console.log(this.profile);
-
-            // this.endPointService
-            //     .getUser(this.profile._id)
-            //     .subscribe((res: any) => console.log(res));
 
             this.createForm();
           } else {
@@ -76,7 +70,6 @@ export class EditProfileComponent implements OnInit, OnDestroy {
         },
         err => {
           console.log(err);
-          // error
         }
       );
   }
@@ -92,26 +85,6 @@ export class EditProfileComponent implements OnInit, OnDestroy {
       address: [this.profile.address || '']
     });
 
-    // if (this.profile.stateOfOrigin) {
-    //   this.editForm.get('stateOfOrigin').value(this.profile.stateOfOrigin);
-    // }
-
-    // if (this.profile.age) {
-    //   this.editForm.get('age').value(this.profile.age);
-    // }
-
-    // if (this.profile.gender) {
-    //   this.editForm.get('gender').value(this.profile.gender);
-    // }
-
-    // if (this.profile.contactNumber) {
-    //   this.editForm.get('contactNumber').value(this.profile.contactNumber);
-    // }
-
-    // if (this.profile.address) {
-    //   this.editForm.get('address').value(this.profile.address);
-    // }
-
     this.showForm = true;
   }
 
@@ -120,7 +93,6 @@ export class EditProfileComponent implements OnInit, OnDestroy {
   }
 
   saveChanges() {
-    console.log(this.editForm.value);
     this.userService
       .updateUsers(this.profile._id, this.editForm.value)
       .subscribe(

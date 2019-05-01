@@ -5,7 +5,7 @@ import { BecomeAMemberComponent } from './become-a-member.component';
 import { SubHeaderModule } from './../../shared/components/sub-header/sub-header.module';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { ExternalUrlModule } from 'src/app/shared/directives/external-url/external-url.module';
+import { ExternalUrlModule } from './../../shared/directives/external-url/external-url.module';
 
 const routes: Routes = [
   { path: '', component: BecomeAMemberComponent }
