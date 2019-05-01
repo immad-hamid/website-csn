@@ -7,26 +7,32 @@ import { EndPointsService } from './../../services/end-points.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  detail: { title: string; text: string; btn: string; };
+  detail: { title: string; text: string; btn: string };
   donateDetail: { title: string; text: string; btn: string; url: string };
   homePageData$: any;
   loading: boolean;
-  programs: { exception: boolean; heading: string; anchor: string; banner: { link: string; }; }[];
+  programs: {
+    exception: boolean;
+    heading: string;
+    anchor: string;
+    banner: { link: string };
+  }[];
 
-  constructor(
-    private endPoints: EndPointsService
-  ) {
+  constructor(private endPoints: EndPointsService) {
     this.detail = {
       title: 'Become a Member',
-      text: 'Join the ICSN family in diaspora today and unlock you exclusive access, discounts and membership support today.',
+      text:
+        'Join the ICSN family in diaspora today and unlock you exclusive access, discounts and membership support today.',
       btn: 'Become a Member'
     };
 
     this.donateDetail = {
       title: 'DONATE to ICSN',
-      text: 'Your donation will help ICSN to continue supporting the Igbo community in the UK and in Nigeria.',
+      text:
+        'Your donation will help ICSN to continue supporting the Igbo community in the UK and in Nigeria.',
       btn: 'Donate to ICSN',
-      url: 'https://www.justgiving.com/crowdfunding/icsn-runthismay?utm_term=m38pMX6Qw'
+      url:
+        'https://www.justgiving.com/crowdfunding/icsn-runthismay?utm_term=m38pMX6Qw'
     };
   }
 
@@ -64,5 +70,4 @@ export class HomeComponent implements OnInit {
       this.loading = true;
     }, 2000);
   }
-
 }

@@ -8,9 +8,14 @@ import { EndPointsService } from './../../services/end-points.service';
 })
 export class AboutUsComponent implements OnInit {
   heading = 'About Us';
-  thingsWeDo: { heading: string; content: string; anchor: string, color: string }[];
+  thingsWeDo: {
+    heading: string;
+    content: string;
+    anchor: string;
+    color: string;
+  }[];
   data$: any;
-  programs: { heading: string; anchor: string; }[];
+  programs: { heading: string; anchor: string }[];
 
   constructor(private endPointsService: EndPointsService) { }
 
@@ -32,5 +37,4 @@ export class AboutUsComponent implements OnInit {
       }
     ];
   }
-
 }

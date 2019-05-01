@@ -18,5 +18,4 @@ export class SingleEventComponent implements OnInit {
       console.log(err);
     });
   }
-
 }

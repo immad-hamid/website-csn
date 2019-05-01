@@ -13,21 +13,16 @@ export class IcsnProgrammesSingleComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private endPointsService: EndPointsService
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     const param = this.route.snapshot.params.id;
 
-    this.endPointsService
-      .getProgram(param)
-      .subscribe(
-        (res: any) => {
-          console.log(res.data);
-          this.programData = res.data;
-        },
-        err => console.log(err)
-      );
+    this.endPointsService.getProgram(param).subscribe(
+      (res: any) => {
+        this.programData = res.data;
+      },
+      err => console.log(err)
+    );
   }
-
 }

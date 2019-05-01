@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpService } from './http.service';
+import { Injectable } from "@angular/core";
+import { HttpService } from "./http.service";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class EndPointsService {
-
   constructor(private http: HttpService) { }
 
   getUser(uid) {
@@ -88,8 +87,10 @@ export class EndPointsService {
     return this.http.get(`/events/${eventId}`);
   }
 
-  getFilteredEvents(from, to) {
-    return this.http.get(`/events?page=0&startDate=${from}&endDate=${to}`);
+  getFilteredEvents(startDate, endDate) {
+    return this.http.get(
+      `/events?page=0&startDate=${startDate}&endDate=${endDate}`
+    );
   }
 
   getMembers() {

@@ -3,9 +3,9 @@ import { EndPointsService } from '../../services/end-points.service';
 import { MatSnackBar } from '@angular/material';
 
 @Component({
-  selector: 'app-events',
-  templateUrl: './events.component.html',
-  styleUrls: ['./events.component.scss']
+  selector: "app-events",
+  templateUrl: "./events.component.html",
+  styleUrls: ["./events.component.scss"]
 })
 export class EventsComponent implements OnInit {
   heading = 'Events';

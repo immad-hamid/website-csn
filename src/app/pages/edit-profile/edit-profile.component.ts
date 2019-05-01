@@ -104,13 +104,10 @@ export class EditProfileComponent implements OnInit, OnDestroy {
   }
 
   openSnackBar(msg) {
-    this.snackBar.open(msg, 'Close',
-      {
-        duration: 3000,
-        horizontalPosition: 'right',
-        verticalPosition: 'bottom'
-      }
-    );
+    this.snackBar.open(msg, 'Close', {
+      duration: 3000,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom'
+    });
   }
-
 }
